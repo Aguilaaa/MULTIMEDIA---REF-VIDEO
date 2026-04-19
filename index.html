@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Multimedia Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="#home" class="logo">Portfolio</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
+    </nav>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div id="mobile-nav" class="mobile-nav" hidden>
+    <a href="#home">Home</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#about">About</a>
+  </div>
+
+  <main>
+    <section id="home" class="section section-home">
+      <div class="home-inner">
+        <p class="eyebrow">Multimedia</p>
+        <h1>Motion, space &amp; story</h1>
+        <p class="lede">
+          A compact showcase: experimental 3D work and rotoscoped video. Use the navigation to explore.
+        </p>
+        <a href="#portfolio" class="btn-primary">View portfolio</a>
+      </div>
+      <div class="home-glow" aria-hidden="true"></div>
+    </section>
+
+    <section id="portfolio" class="section section-portfolio">
+      <div class="section-head">
+        <h2>Portfolio</h2>
+        <p>Interactive 3D and video pieces — solar system build coming next; reference video for your rotoscope task is below.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <article class="card card-solar">
+          <header class="card-head">
+            <h3>3D Solar System</h3>
+            <span class="badge">Placeholder</span>
+          </header>
+          <div class="solar-placeholder" id="solar-system-root" role="region" aria-label="3D solar system (coming soon)">
+            <div class="solar-placeholder-inner">
+              <span class="orbit-ring"></span>
+              <span class="orbit-dot"></span>
+              <p>3D scene reserved — content will go here.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card-video">
+          <header class="card-head">
+            <h3>Reference video</h3>
+            <span class="badge badge-live">For rotoscope</span>
+          </header>
+          <div class="video-frame">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/KNzw53-oxQc?feature=oembed"
+              title="Reference video for rotoscope project"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section section-about">
+      <div class="about-inner">
+        <h2>About</h2>
+        <p>
+          This site is built with plain HTML, CSS, and JavaScript — no frameworks. The portfolio section will grow
+          with a real-time 3D solar system and your rotoscope piece when that work is ready.
+        </p>
+        <p>
+          Replace this copy with your bio, tools you use (e.g. Blender, After Effects, clip studio), and what kind of
+          collaborations you are open to.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Multimedia portfolio</span>
+    <span class="sep" aria-hidden="true">·</span>
+    <span>HTML · CSS · JavaScript</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
