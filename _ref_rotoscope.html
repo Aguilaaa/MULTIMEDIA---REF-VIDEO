@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-Minute Rotoscope Project | Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../layouts/style.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <script>
+        fetch('../layouts/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
+
+    <section class="tutorial-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-center mb-5">1-Minute Rotoscope Video</h5>
+                    <p class="step-desc">A frame-by-frame animation created using the tracing technique with an
+                        auto-brush tool in Adobe After Effects.</p>
+                    <span class="badge bg-primary px-3 py-2">Adobe After Effects</span>
+                    <span class="badge bg-primary px-3 py-2">Adobe Premiere Pro</span>
+                    <span class="badge bg-primary px-3 py-2">CapCut</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="ratio ratio-16x9 my-5">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zXGmIpt5H7M"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <p class="step-desc text-center"><small><em>Disclaimer: This video was created for academic purposes
+                    only.</em></small></p>
+        </div>
+    </section>
+
+    <!-- Step-by-Step Tutorial Section -->
+    <section class="tutorial-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Step-by-Step Tutorial</h2>
+
+            <div class="row g-4">
+                <!-- Step 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card h-100">
+                        <div class="step-number">1</div>
+                        <div class="embed-responsive mb-3">
+                            <iframe class="embed-responsive-item"
+                                src="https://www.youtube.com/embed/6xKnQQ8-21w?si=18Yfr48YTTcQMOmb"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <h5 class="step-title">Select Source Material</h5>
+                        <p class="step-desc">Choose high-quality video with clear subject-background contrast and
+                            interesting movement patterns.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card h-100">
+                        <div class="step-number">2</div>
+                        <div class="step-image mb-3">
+                            <img src="../images/capcut.png" alt="Cutting video into clips" class="img-fluid rounded">
+                        </div>
+                        <h5 class="step-title">Cut the Video into 5-Second Clips</h5>
+                        <p class="step-desc">Use CapCut to split the selected video into 5-second segments for easier
+                            editing.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card h-100">
+                        <div class="step-number">3</div>
+                        <div class="step-image mb-3">
+                            <img src="../images/composition.png" alt="Creating new composition in After Effects"
+                                class="img-fluid rounded">
+                        </div>
+                        <h5 class="step-title">Create a New Composition</h5>
+                        <p class="step-desc">In After Effects, create a separate 5-second composition for each clip
+                            segment.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card h-100">
+                        <div class="step-number">4</div>
+                        <div class="step-image mb-3">
+                            <img src="../images/layer.png" alt="Using Roto Brush Tool to isolate subject"
+                                class="img-fluid rounded">
+                        </div>
+                        <h5 class="step-title">Trace Each Layer</h5>
+                        <p class="step-desc">Isolate the subject into separate layers (shirt, pants, body, hair, shoes)
+                            using the Roto Brush Tool. Freeze each layer to edit others independently.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card h-100">
+                        <div class="step-number">5</div>
+                        <div class="step-image mb-3">
+                            <img src="../images/trace.png" alt="Adding details and colors" class="img-fluid rounded">
+                        </div>
+                        <h5 class="step-title">Add Fill Colors to Layers</h5>
+                        <p class="step-desc">Apply solid color fills to each isolated layer (shirt, pants, hair, etc.)
+                            to prepare for stylization.</p>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card h-100">
+                        <div class="step-number">6</div>
+                        <div class="step-image mb-3">
+                            <img src="../images/render.png" alt="Final polish and effects" class="img-fluid rounded">
+                        </div>
+                        <h5 class="step-title">Render All Compositions</h5>
+                        <p class="step-desc">Export each 5-second composition through the Render Queue with consistent
+                            settings.</p>
+                    </div>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card h-100">
+                        <div class="step-number">7</div>
+                        <div class="step-image mb-3">
+                            <img src="../images/export.png" alt="Export and delivery" class="img-fluid rounded">
+                        </div>
+                        <h5 class="step-title">Compile All 5-Second Clips</h5>
+                        <p class="step-desc">Combine all clips in CapCut, add audio, and export in mp4
+                            format.</p>
+                    </div>
+                </div>
+
+                <!-- Step 8 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card h-100">
+                        <div class="step-number">8</div>
+                        <div class="step-image mb-3">
+                            <img src="../images/lyrics.png" alt="Editing with Adobe Premiere Pro"
+                                class="img-fluid rounded">
+                        </div>
+                        <h5 class="step-title">Edit Lyrics & Background</h5>
+                        <p class="step-desc">Use Adobe Premiere Pro to add lyrics, sync them with the audio, and change
+                            background colors to enhance visual appeal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Progress Section -->
+    <section class="tutorial-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Weekly Progress</h2>
+
+            <div class="row g-4">
+                <!-- Week 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="week-card h-100">
+                        <div class="week-number-container text-center mb-3">
+                            <div class="week-number">Week 1</div>
+                        </div>
+                        <div class="embed-container mb-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/oERxfKNgRzI"
+                                    title="Week 1 Progress" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="week-card h-100">
+                        <div class="week-number-container text-center mb-3">
+                            <div class="week-number">Week 2</div>
+                        </div>
+                        <div class="embed-container mb-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Hpd39fY-iHg"
+                                    title="Week 1 Progress" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="week-card h-100">
+                        <div class="week-number-container text-center mb-3">
+                            <div class="week-number">Week 3</div>
+                        </div>
+                        <div class="embed-container mb-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/k7PNJJ6Jomw"
+                                    title="Week 1 Progress" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="week-card h-100">
+                        <div class="week-number-container text-center mb-3">
+                            <div class="week-number">Week 4</div>
+                        </div>
+                        <div class="embed-container mb-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/n-zFTFRmNGM"
+                                    title="Week 1 Progress" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="week-card h-100">
+                        <div class="week-number-container text-center mb-3">
+                            <div class="week-number">Week 5</div>
+                        </div>
+                        <div class="embed-container mb-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/uaYhLLw9nLk"
+                                    title="Week 1 Progress" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="week-card h-100">
+                        <div class="week-number-container text-center mb-3">
+                            <div class="week-number">Week 6</div>
+                        </div>
+                        <div class="embed-container mb-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZOmYVB9-jPk"
+                                    title="Week 1 Progress" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 7 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="week-card h-100">
+                        <div class="week-number-container text-center mb-3">
+                            <div class="week-number">Week 7</div>
+                        </div>
+                        <div class="embed-container mb-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_HZ0UCEdfxA"
+                                    title="Week 1 Progress" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 8 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="week-card h-100">
+                        <div class="week-number-container text-center mb-3">
+                            <div class="week-number">Week 8</div>
+                        </div>
+                        <div class="embed-container mb-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/q2XKlnT-UxY"
+                                    title="Week 1 Progress" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 9 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="week-card h-100">
+                        <div class="week-number-container text-center mb-3">
+                            <div class="week-number">Week 9</div>
+                        </div>
+                        <div class="embed-container mb-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/w4_WB8nqpf0"
+                                    title="Week 1 Progress" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 10 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="week-card h-100">
+                        <div class="week-number-container text-center mb-3">
+                            <div class="week-number">Week 10</div>
+                        </div>
+                        <div class="embed-container mb-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/T--TmCtF6_g"
+                                    title="Week 1 Progress" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 11 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="week-card h-100">
+                        <div class="week-number-container text-center mb-3">
+                            <div class="week-number">Week 11</div>
+                        </div>
+                        <div class="embed-container mb-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SSKppe9SIX4"
+                                    title="Week 1 Progress" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 12 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="week-card h-100">
+                        <div class="week-number-container text-center mb-3">
+                            <div class="week-number">Week 12</div>
+                        </div>
+                        <div class="embed-container mb-3">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pbYblgXxaAU"
+                                    title="Week 1 Progress" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer"></div>
+
+                <script>
+                    fetch('../layouts/footer.html')
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById('footer').innerHTML = data;
+                        });
+                </script>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

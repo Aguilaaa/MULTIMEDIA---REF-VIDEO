@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Multimedia & Authoring</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./layouts/style.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <script>
+        fetch('./layouts/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
+
+    <section id="home" class="hero-section">
+        <div class="about-card">
+            <div class="profile-container">
+                <img src="./images/pau.jpg" alt="Profile" class="profile-sketch">
+            </div>
+
+            <div class="text-center mb-4">
+                <h1 class="name-title">MARY PAULINE D. CALUNGSOD</h1>
+                <h4 class="course-title">BSIT - S - T - 2A</h4>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="mb-4 text-center">
+                        Welcome to my digital art portfolio showcasing my journey in 3D rendering and rotoscoping.
+                        Explore my projects featuring different multimedia software and techniques for creating 3D
+                        models and animations.
+                    </p>
+
+                    <ul class="feature-list mb-4">
+                        <li>Learn frame-by-frame rotoscoping techniques After Effects.</li>
+                        <li>Discover Python scripting for Blender to automate modeling tasks and create custom animation
+                            tools.</li>
+                        <li>Follow my weekly workflow updates showing progress in rotoscoping.</li>
+                        <li>View final project showcases.</li>
+                    </ul>
+                    <div class="social-icons text-center mt-4">
+                        <a href="https://www.facebook.com/Mary.Pauline.Cal"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/mryplvxn/"><i class="bi bi-instagram"></i></a>
+                        <a href="https://github.com/chokolattee"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/mary-pauline-calungsod-3b0b1a1b2/"><i
+                                class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer"></div>
+
+        <script>
+            fetch('./layouts/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading footer:', error);
+                });
+        </script>
+    </section>
+
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

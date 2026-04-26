@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Solar System | Portfolio </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../layouts/style.css">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <script>
+        fetch('../layouts/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
+
+    <section class="tutorial-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-center mb-5">3D Solar System</h2>
+                <p class="step-desc">A dynamic 3D solar system animation created in Blender, utilizing Python
+                    scripting (v3.3) in the Scripting tab for procedural automation and precise celestial motion.
+                </p>
+                <span class="badge px-3 py-2">Blender</span>
+                <span class="badge px-3 py-2">3D Modeling</span>
+                <span class="badge px-3 py-2">Python Script</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="ratio ratio-16x9 my-5">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RTRwZFPa3DM"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Section -->
+    <section class="tutorial-section py-5">
+        <div class="container">
+            <h2 class="mb-4">Project Details</h2>
+            <div class="step-desc">
+                <h5>Tools Used</h5>
+                <ul>
+                    <li>Blender 3.3 (for 3D modeling and animation)</li>
+                    <li>Python Scripting (for procedural generation and automation)</li>
+                </ul>
+            </div>
+            <div class="step-desc">
+                <h5>Render Information</h5>
+                <ul>
+                    <li>Render Time: Approximately 13 hours and 30 minutes</li>
+                    <li>Resolution: 1920x1080 at 24fps</li>
+                    <li>Total Frames: 3500 (2 minutes and 25 seconds animation)</li>
+                </ul>
+            </div>
+            <div class="step-desc">
+                <h5>Key Features</h5>
+                <ul>
+                    <li>Procedurally generated solar system with almost relative sizes</li>
+                    <li>Realistic orbital mechanics with almost relative speeds</li>
+                    <li>Dynamic camera movements zooming in/out between planets</li>
+                    <li>Detailed planetary textures and atmospheric effects</li>
+                    <li>Animated informational displays for each planet</li>
+                </ul>
+            </div>
+            <div class="step-desc">
+                <h5>Texture Materials</h5>
+                <ul>
+                    <li>High-resolution planetary textures sourced from <a
+                            href="https://www.solarsystemscope.com/textures/" target="_blank"
+                            rel="noopener noreferrer">Solar System Scope's texture library</a></li>
+                </ul>
+            </div>
+            <div class="step-desc">
+                <h5>Python Scripts for Sun and Each Planets</h5>
+                <ul>
+                    <li>Python Scripts for Sun and Each Planets <a
+                            href="https://drive.google.com/drive/folders/1eVlGBxb9bhEMnWtpwL9aerD9mC7Apojv?usp=sharing"
+                            target="_blank" rel="noopener noreferrer">Python Scripts for Sun and Each Planets</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animation Sequence Section -->
+    <section class="tutorial-section py-5">
+        <div class="container">
+            <h2 class="mb-4">Animation Sequence</h2>
+            <div class="timeline">
+                <div class="step-desc">
+                    <h5>Opening Sequence (0-3s)</h5>
+                    <p>Camera zooms from sun into Mercury, establishing the scale and style of the animation.</p>
+                </div>
+                <div class="step-desc">
+                    <h5>Planetary Tour (3 secs each planet)</h5>
+                    <p>Smooth transitions between each planet (Mercury to Pluto) displaying planet name.</p>
+                </div>
+                <div class="step-desc">
+                    <h5>Solar System Overview (1 minute)</h5>
+                    <p>Camera zooms out to show the complete solar system with all planets orbiting the sun,
+                        demonstrating their relative positions and speeds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Calculator Section -->
+    <section class="tutorial-section py-5">
+        <div class="container">
+            <div class="calculator-section">
+                <div class="row mb-4">
+                    <div class="col-md-10 mx-auto text-center">
+                        <h4 class="mb-3">
+                            <i class="fas fa-rocket orbit-animation"></i>
+                            Calculate Time & Motion in the Solar System
+                        </h4>
+                        <div class="input-group mb-3">
+                            <input type="number" id="earthYearsInput" class="form-control form-control-lg"
+                                placeholder="Enter Earth years to see how time passes on other planets" min="0"
+                                value="1" step="0.1">
+                            <button class="btn btn-cosmic btn-lg" onclick="calculatePlanetaryTime()">
+                                <i class="fas fa-calculator"></i> Calculate
+                            </button>
+                        </div>
+                        <small style="color: white;">
+                            <i class="fas fa-info-circle"></i>
+                            Enter Earth years to see ages, revolutions, orbital periods, and distances for all planets
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Celestial Bodies Section -->
+    <section class="tutorial-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Celestial Bodies & Orbital Dynamics</h2>
+
+            <div class="row g-4">
+                <!-- Sun -->
+                <div class="col-lg-6">
+                    <div class="step-card">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sun</h5>
+                                    <div class="planet-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">Age:</span>
+                                            <span class="stat-value age-display">4.6 billion years</span>
+                                        </div>
+                                    </div>
+                                    <div class="time-comparison mb-3">
+                                        <strong>Description:</strong>
+                                        <span class="time-comparison-text">
+                                            The smallest and innermost planet, Mercury has extreme
+                                            temperature variations and a surface scarred by countless impact craters.
+                                        </span>
+                                    </div>
+                                    <div class="img-container"
+                                        style="width: 100%; max-height: 400px; border-radius: 0.5rem; overflow: hidden;">
+                                        <video class="w-100 h-100" style="object-fit: fill;" autoplay muted loop
+                                            playsinline>
+                                            <source src="../videos/sun.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mercury -->
+                <div class="col-lg-6">
+                    <div class="step-card">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mercury</h5>
+                                    <div class="planet-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">Age:</span>
+                                            <span class="stat-value age-display" data-body="mercury">4.15 years</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Revolutions:</span>
+                                            <span class="stat-value revolution-display" data-body="mercury">4.15</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Orbital Period:</span>
+                                            <span class="stat-value">88 Earth days</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Distance from Sun:</span>
+                                            <span class="stat-value">57.9 million km</span>
+                                        </div>
+                                    </div>
+                                    <div class="time-comparison">
+                                        <strong>Description:</strong>
+                                        <span class="time-comparison-text">
+                                            The smallest and innermost planet, Mercury has extreme
+                                            temperature variations and a surface scarred by countless impact craters.
+                                        </span>
+                                    </div>
+                                    <div class="img-container"
+                                        style="width: 100%; max-height: 400px; border-radius: 0.5rem; overflow: hidden;">
+                                        <video class="w-100 h-100" style="object-fit: fill;" autoplay muted loop
+                                            playsinline>
+                                            <source src="../videos/mercury.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venus -->
+                <div class="col-lg-6">
+                    <div class="step-card">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">Venus</h5>
+                                    <div class="planet-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">Age:</span>
+                                            <span class="stat-value age-display" data-body="venus">1.63 years</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Revolutions:</span>
+                                            <span class="stat-value revolution-display" data-body="venus">1.63</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Orbital Period:</span>
+                                            <span class="stat-value">225 Earth days</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Distance from Sun:</span>
+                                            <span class="stat-value">108.2 million km</span>
+                                        </div>
+                                    </div>
+                                    <div class="time-comparison">
+                                        <strong>Description:</strong>
+                                        <span class="time-comparison-text">
+                                            Often called Earth's twin, Venus is shrouded in thick toxic
+                                            clouds and has a runaway greenhouse effect making it the hottest planet.
+                                        </span>
+                                    </div>
+                                    <div class="img-container"
+                                        style="width: 100%; max-height: 400px; border-radius: 0.5rem; overflow: hidden;">
+                                        <video class="w-100 h-100" style="object-fit: fill;" autoplay muted loop
+                                            playsinline>
+                                            <source src="../videos/venus.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Earth -->
+                <div class="col-lg-6">
+                    <div class="step-card">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">Earth (Reference)</h5>
+                                    <div class="planet-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">Age:</span>
+                                            <span class="stat-value age-display" data-body="earth">1.00 year</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Revolutions:</span>
+                                            <span class="stat-value revolution-display" data-body="earth">1.00</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Orbital Period:</span>
+                                            <span class="stat-value">365.25 Earth days</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Distance from Sun:</span>
+                                            <span class="stat-value">149.6 million km</span>
+                                        </div>
+                                    </div>
+                                    <div class="time-comparison">
+                                        <strong>Description:</strong>
+                                        <span class="time-comparison-text">
+                                            Our home planet is the only known place in the universe
+                                            confirmed to host life, with vast oceans and a protective atmosphere.
+                                        </span>
+                                    </div>
+                                    <div class="img-container"
+                                        style="width: 100%; max-height: 400px; border-radius: 0.5rem; overflow: hidden;">
+                                        <video class="w-100 h-100" style="object-fit: fill;" autoplay muted loop
+                                            playsinline>
+                                            <source src="../videos/earth.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mars -->
+                <div class="col-lg-6">
+                    <div class="step-card">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mars</h5>
+                                    <div class="planet-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">Age:</span>
+                                            <span class="stat-value age-display" data-body="mars">0.53 years</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Revolutions:</span>
+                                            <span class="stat-value revolution-display" data-body="mars">0.53</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Orbital Period:</span>
+                                            <span class="stat-value">687 Earth days</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Distance from Sun:</span>
+                                            <span class="stat-value">227.9 million km</span>
+                                        </div>
+                                    </div>
+                                    <div class="time-comparison">
+                                        <strong>Description:</strong>
+                                        <span class="time-comparison-text">
+                                            The Red Planet features the solar system's largest volcano and
+                                            canyon, with evidence suggesting it once had flowing water.
+                                        </span>
+                                    </div>
+                                    <div class="img-container"
+                                        style="width: 100%; max-height: 400px; border-radius: 0.5rem; overflow: hidden;">
+                                        <video class="w-100 h-100" style="object-fit: fill;" autoplay muted loop
+                                            playsinline>
+                                            <source src="../videos/mars.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jupiter -->
+                <div class="col-lg-6">
+                    <div class="step-card">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jupiter</h5>
+                                    <div class="planet-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">Age:</span>
+                                            <span class="stat-value age-display" data-body="jupiter">0.08 years</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Revolutions:</span>
+                                            <span class="stat-value revolution-display" data-body="jupiter">0.08</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Orbital Period:</span>
+                                            <span class="stat-value">11.86 Earth years</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Distance from Sun:</span>
+                                            <span class="stat-value">778.5 million km</span>
+                                        </div>
+                                    </div>
+                                    <div class="time-comparison">
+                                        <strong>Description:</strong>
+                                        <span class="time-comparison-text">
+                                            The largest planet in our solar system, Jupiter is a gas giant
+                                            with a Great Red Spot storm that has raged for centuries.
+                                        </span>
+                                    </div>
+                                    <div class="img-container"
+                                        style="width: 100%; max-height: 400px; border-radius: 0.5rem; overflow: hidden;">
+                                        <video class="w-100 h-100" style="object-fit: fill;" autoplay muted loop
+                                            playsinline>
+                                            <source src="../videos/jupiter.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Saturn -->
+                <div class="col-lg-6">
+                    <div class="step-card">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">Saturn</h5>
+                                    <div class="planet-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">Age:</span>
+                                            <span class="stat-value age-display" data-body="saturn">0.03 years</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Revolutions:</span>
+                                            <span class="stat-value revolution-display" data-body="saturn">0.03</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Orbital Period:</span>
+                                            <span class="stat-value">29.45 Earth years</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Distance from Sun:</span>
+                                            <span class="stat-value">1.432 billion km</span>
+                                        </div>
+                                    </div>
+                                    <div class="time-comparison">
+                                        <strong>Description:</strong>
+                                        <span class="time-comparison-text">
+                                            Famous for its spectacular ring system, Saturn is a gas giant
+                                            with density low enough to float on water.
+                                        </span>
+                                    </div>
+                                    <div class="img-container"
+                                        style="width: 100%; max-height: 400px; border-radius: 0.5rem; overflow: hidden;">
+                                        <video class="w-100 h-100" style="object-fit: fill;" autoplay muted loop
+                                            playsinline>
+                                            <source src="../videos/saturn.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Uranus -->
+                <div class="col-lg-6">
+                    <div class="step-card">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">Uranus</h5>
+                                    <div class="planet-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">Age:</span>
+                                            <span class="stat-value age-display" data-body="uranus">0.01 years</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Revolutions:</span>
+                                            <span class="stat-value revolution-display" data-body="uranus">0.01</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Orbital Period:</span>
+                                            <span class="stat-value">84.02 Earth years</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Distance from Sun:</span>
+                                            <span class="stat-value">2.867 billion km</span>
+                                        </div>
+                                    </div>
+                                    <div class="time-comparison">
+                                        <strong>Description:</strong>
+                                        <span class="time-comparison-text">
+                                            An ice giant that rotates on its side, Uranus has a unique
+                                            blue-green color from methane in its atmosphere.
+                                        </span>
+                                    </div>
+                                    <div class="img-container"
+                                        style="width: 100%; max-height: 400px; border-radius: 0.5rem; overflow: hidden;">
+                                        <video class="w-100 h-100" style="object-fit: fill;" autoplay muted loop
+                                            playsinline>
+                                            <source src="../videos/uranus.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neptune -->
+                <div class="col-lg-6">
+                    <div class="step-card">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">Neptune</h5>
+                                    <div class="planet-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">Age:</span>
+                                            <span class="stat-value age-display" data-body="neptune">0.01 years</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Revolutions:</span>
+                                            <span class="stat-value revolution-display" data-body="neptune">0.01</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Orbital Period:</span>
+                                            <span class="stat-value">164.79 Earth years</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Distance from Sun:</span>
+                                            <span class="stat-value">4.515 billion km</span>
+                                        </div>
+                                    </div>
+                                    <div class="time-comparison">
+                                        <strong>Description:</strong>
+                                        <span class="time-comparison-text">
+                                            The windiest planet with the strongest storms in the solar
+                                            system, Neptune's deep blue atmosphere is constantly in motion.
+                                        </span>
+                                    </div>
+                                    <div class="img-container"
+                                        style="width: 100%; max-height: 400px; border-radius: 0.5rem; overflow: hidden;">
+                                        <video class="w-100 h-100" style="object-fit: fill;" autoplay muted loop
+                                            playsinline>
+                                            <source src="../videos/neptune.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pluto -->
+                <div class="col-lg-6">
+                    <div class="step-card">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <h5 class="card-title">Pluto (Dwarf Planet)</h5>
+                                    <div class="planet-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">Age:</span>
+                                            <span class="stat-value age-display" data-body="pluto">0.00 years</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Revolutions:</span>
+                                            <span class="stat-value revolution-display" data-body="pluto">0.00</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Orbital Period:</span>
+                                            <span class="stat-value">248.00 Earth years</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Distance from Sun:</span>
+                                            <span class="stat-value">5.906 billion km</span>
+                                        </div>
+                                    </div>
+                                    <div class="time-comparison">
+                                        <strong>Description:</strong>
+                                        <span class="time-comparison-text">
+                                            Pluto is a dwarf planet in the Kuiper Belt, known for its icy surface and
+                                            eccentric orbit around the Sun.
+                                        </span>
+                                    </div>
+                                    <div class="img-container"
+                                        style="width: 100%; max-height: 400px; border-radius: 0.5rem; overflow: hidden;">
+                                        <video class="w-100 h-100" style="object-fit: fill;" autoplay muted loop
+                                            playsinline>
+                                            <source src="../videos/pluto.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Python Scripts Section -->
+    <section class="tutorial-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Python Script</h2>
+            <div class="row g-4">
+                <!-- Main Solar System Generator -->
+                <div class="step-card h-100 ">
+                    <div class="card-body">
+                        <h5 class="card-title">Solar System Generator</h5>
+                        <p class="step-desc">This script creates all planetary objects with almost relative sizes
+                            and positions, sets up their materials, and establishes orbital paths.</p>
+                        <div class="code-container mt-3">
+                            <button class="copy-btn btn btn-sm btn-outline-primary" onclick="copyCode('solarScript')">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                            <pre id="solarScript"><code>
+import bpy
+import math
+from mathutils import Euler
+
+
+# === SMART RENDER OPTIMIZATION (MAINTAINS QUALITY) ===
+ADAPTIVE_SAMPLING = True    # Let Blender decide optimal sample count
+PERSISTENT_DATA = True      # Keep data in memory between frames
+TILE_SIZE = 256            # Optimal tile size for most GPUs
+USE_OPTIX = True           # Use OptiX if available (NVIDIA GPUs)
+CULL_BACKFACES = True
+MEMORY_LIMIT_MB = 2048     # Memory cache limit in MB  
+
+# === TEXTURE PATHS ===
+TEXTURE_PATHS = {
+    "Sun": r"C:\Users\mrypln\Downloads\textures\2k_sun.jpg",
+    "Mercury": r"C:\Users\mrypln\Downloads\textures\2k_mercury.jpg",
+    "Venus": r"C:\Users\mrypln\Downloads\textures\2k_venus.jpg",
+    "Earth": r"C:\Users\mrypln\Downloads\textures\2k_earth.jpg",
+    "Moon": r"C:\Users\mrypln\Downloads\textures\2k_moon.jpg",
+    "Mars": r"C:\Users\mrypln\Downloads\textures\2k_mars.jpg",
+    "Jupiter": r"C:\Users\mrypln\Downloads\textures\2k_jupiter.jpg",
+    "Saturn": r"C:\Users\mrypln\Downloads\textures\2k_saturn.jpg",
+    "SaturnRings": r"C:\Users\mrypln\Downloads\textures\2k_saturn_rings_alpha.png",
+    "Uranus": r"C:\Users\mrypln\Downloads\textures\2k_uranus.jpg",
+    "Neptune": r"C:\Users\mrypln\Downloads\textures\2k_neptune.jpg",
+    "Pluto": r"C:\Users\mrypln\Downloads\textures\2k_pluto.jpg",
+    "Stars": r"C:\Users\mrypln\Downloads\textures\2k_stars.jpg"
+}
+
+# Updated planet data with Pluto added and slower orbital motion
+planet_data = [
+    {"name": "Mercury", "distance": 4, "radius": 0.3, "period": 88, "rotation_hours": 1407.6},
+    {"name": "Venus", "distance": 6, "radius": 0.5, "period": 225, "rotation_hours": -5832.5},  # Negative for retrograde
+    {"name": "Earth", "distance": 8, "radius": 0.5, "period": 365, "rotation_hours": 24.0},
+    {"name": "Moon", "distance": 9, "radius": 0.2, "period": 365, "rotation_hours": 655.2},  # Moon matches Earth's orbital period
+    {"name": "Mars", "distance": 10, "radius": 0.4, "period": 687, "rotation_hours": 24.6},
+    {"name": "Jupiter", "distance": 14, "radius": 1.1, "period": 4333, "rotation_hours": 9.9},
+    {"name": "Saturn", "distance": 18, "radius": 0.9, "period": 10759, "rotation_hours": 10.7},
+    {"name": "Uranus", "distance": 22, "radius": 0.7, "period": 30685, "rotation_hours": -17.2},  # Negative for retrograde
+    {"name": "Neptune", "distance": 26, "radius": 0.7, "period": 60190, "rotation_hours": 16.1},
+    {"name": "Pluto", "distance": 30, "radius": 0.15, "period": 90560, "rotation_hours": -153.3},  # Pluto added with retrograde rotation
+]
+
+# === ANIMATION SETTINGS - ADJUSTED FOR 3500 FRAMES ===
+ZOOM_DURATION = 60  # Reduced from 80 to 60
+ZOOM_OUT_DURATION = 50  # Reduced from 60 to 50
+ROTATION_START_FRAME = len(planet_data) * ZOOM_DURATION + ZOOM_OUT_DURATION + 24  # Start rotations after tour
+ORBITAL_SPEED_MULTIPLIER = 2.0  # 🐌 SLOWER: Reduced from 10x to 2x speed for more realistic motion
+
+print(f"🎬 ANIMATION TIMELINE:")
+print(f"   - Planet rotation starts at frame: {ROTATION_START_FRAME}")
+print(f"   - Total animation frames: 3500")
+print(f"   - Planet close-ups: Frames 1-{len(planet_data) * ZOOM_DURATION}")
+print(f"   - Zoom out: Frames {len(planet_data) * ZOOM_DURATION + 1}-{ROTATION_START_FRAME}")
+print(f"   - Full system view with rotations: Frames {ROTATION_START_FRAME}-3500")
+
+# === CLEANUP ===
+bpy.ops.object.select_all(action='SELECT')
+bpy.ops.object.delete(use_global=False)
+
+# === RENDER ENGINE AND OPTIMIZATION SETTINGS ===
+bpy.context.scene.render.engine = 'CYCLES'
+bpy.context.scene.cycles.device = 'GPU'
+
+# Set memory cache limit to 2048 MB
+bpy.context.scene.cycles.tile_size = TILE_SIZE
+bpy.context.scene.cycles.use_persistent_data = PERSISTENT_DATA
+
+# Enable OptiX for NVIDIA GPUs (if available)
+if USE_OPTIX:
+    # Set compute device to OptiX if available
+    for device in bpy.context.preferences.addons['cycles'].preferences.devices:
+        if device.type == 'OPTIX':
+            device.use = True
+            print(f"✅ OptiX device enabled: {device.name}")
+        elif device.type == 'CUDA':
+            device.use = False  # Disable CUDA when OptiX is available
+            print(f"⚠️ CUDA device disabled in favor of OptiX: {device.name}")
+        elif device.type == 'OPENCL':
+            device.use = False  # Disable OpenCL
+            print(f"⚠️ OpenCL device disabled: {device.name}")
+
+# Memory and performance optimizations
+bpy.context.scene.cycles.preview_samples = 32
+bpy.context.scene.cycles.samples = 128 if ADAPTIVE_SAMPLING else 256
+bpy.context.scene.cycles.use_adaptive_sampling = ADAPTIVE_SAMPLING
+bpy.context.scene.cycles.adaptive_threshold = 0.01
+bpy.context.scene.cycles.max_bounces = 8
+bpy.context.scene.cycles.transparent_max_bounces = 8
+
+# Set memory cache limit to 2048 MB
+try:
+    bpy.context.scene.cycles.debug_bvh_type = 'DYNAMIC_BVH'
+    bpy.context.scene.cycles.debug_use_spatial_splits = True
+    bpy.context.scene.cycles.debug_use_hair_bvh = True
+    bpy.context.scene.cycles.tile_size = TILE_SIZE
+    
+    # Set GPU memory limit (2048 MB = 2 GB)
+    bpy.context.preferences.addons['cycles'].preferences.compute_device_type = 'OPTIX' if USE_OPTIX else 'CUDA'
+    
+    print("✅ Render optimizations applied:")
+    print(f"   - Memory cache optimized for performance")
+    print(f"   - Tile size: {TILE_SIZE}x{TILE_SIZE}")
+    print(f"   - Adaptive sampling: {ADAPTIVE_SAMPLING}")
+    print(f"   - Persistent data: {PERSISTENT_DATA}")
+    print(f"   - OptiX enabled: {USE_OPTIX}")
+except Exception as e:
+    print(f"⚠️ Some optimization settings may not be available: {e}")
+
+# Set frame range for the animation - FIXED TO 3500 FRAMES
+bpy.context.scene.frame_start = 1
+bpy.context.scene.frame_end = 3500  # Fixed to exactly 3500 frames
+
+# === FUNCTION TO CREATE TEXTURE MATERIAL ===
+def create_texture_material(name, emission_strength=0, alpha=False):
+    path = TEXTURE_PATHS.get(name)
+    if not path:
+        print(f"❌ No texture path found for {name}")
+        return None
+    try:
+        image = bpy.data.images.load(path)
+        print(f"✅ Loaded texture for {name}: {path}")
+    except Exception as e:
+        print(f"❌ Failed to load {name} texture: {path} - {e}")
+        return None
+
+    mat = bpy.data.materials.new(name=f"{name}_Mat")
+    mat.use_nodes = True
+    nodes = mat.node_tree.nodes
+    links = mat.node_tree.links
+
+    for node in nodes:
+        nodes.remove(node)
+
+    output = nodes.new(type='ShaderNodeOutputMaterial')
+    bsdf = nodes.new(type='ShaderNodeBsdfPrincipled')
+    tex_image = nodes.new(type='ShaderNodeTexImage')
+    tex_image.image = image
+
+    if alpha:
+        mat.blend_method = 'BLEND'
+        mat.shadow_method = 'CLIP'
+        links.new(tex_image.outputs['Alpha'], bsdf.inputs['Alpha'])
+
+    links.new(tex_image.outputs['Color'], bsdf.inputs['Base Color'])
+
+    if emission_strength > 0:
+        emission = nodes.new(type='ShaderNodeEmission')
+        emission.inputs['Strength'].default_value = emission_strength
+        mix = nodes.new(type='ShaderNodeMixShader')
+
+        links.new(tex_image.outputs['Color'], emission.inputs['Color'])
+        links.new(bsdf.outputs['BSDF'], mix.inputs[1])
+        links.new(emission.outputs['Emission'], mix.inputs[2])
+        links.new(mix.outputs['Shader'], output.inputs['Surface'])
+    else:
+        links.new(bsdf.outputs['BSDF'], output.inputs['Surface'])
+
+    return mat
+
+# === FUNCTION TO CREATE ORBIT LINE ===
+def create_orbit_line(distance, name):
+    bpy.ops.curve.primitive_bezier_circle_add(radius=distance, location=(0, 0, 0))
+    orbit_curve = bpy.context.object
+    orbit_curve.name = f"{name}_OrbitLine"
+    orbit_curve.data.fill_mode = 'FULL'
+    orbit_curve.data.bevel_depth = 0.02
+    orbit_curve.data.resolution_u = 64
+
+    # Special styling for Moon and Pluto orbit lines
+    if name == "Moon":
+        orbit_curve.data.bevel_depth = 0.015  # Slightly thinner than planet orbits
+    elif name == "Pluto":
+        orbit_curve.data.bevel_depth = 0.025  # THICKER for better visibility!
+    
+    mat = bpy.data.materials.new(name=f"{name}_OrbitMat")
+    mat.use_nodes = True
+    nodes = mat.node_tree.nodes
+    links = mat.node_tree.links
+
+    for node in nodes:
+        nodes.remove(node)
+
+    output = nodes.new(type='ShaderNodeOutputMaterial')
+    emission = nodes.new(type='ShaderNodeEmission')
+    
+    # Special colors for Moon and Pluto orbits
+    if name == "Moon":
+        emission.inputs['Color'].default_value = (0.7, 0.7, 0.9, 1.0)  # Bluish-gray for Moon
+        emission.inputs['Strength'].default_value = 0.8  # Slightly dimmer
+    elif name == "Pluto":
+        emission.inputs['Color'].default_value = (1.0, 0.6, 0.2, 1.0)  # BRIGHT ORANGE for visibility!
+        emission.inputs['Strength'].default_value = 1.5  # BRIGHTER for visibility!
+    else:
+        emission.inputs['Color'].default_value = (0.8, 0.8, 0.8, 1.0)
+        emission.inputs['Strength'].default_value = 1.0
+
+    links.new(emission.outputs['Emission'], output.inputs['Surface'])
+    orbit_curve.data.materials.append(mat)
+
+# === FIXED SATURN RINGS FUNCTION - PERFECT FLAT ROTATION ===
+def create_saturn_rings(saturn_orbit_empty, saturn_distance, radius=0.9):
+    """
+    Create Saturn rings that stay perfectly flat and rotate smoothly.
+    Parent to orbit empty instead of Saturn planet to avoid wobbling.
+    """
+    # Create rings as a flat cylinder at Saturn's orbital position
+    bpy.ops.mesh.primitive_cylinder_add(radius=radius*1.7, depth=0.01, vertices=64, location=(saturn_distance, 0, 0))
+    rings = bpy.context.object
+    rings.name = "Saturn_Rings"
+    
+    # Keep rings COMPLETELY FLAT - no tilt at all
+    rings.rotation_euler = (0, 0, 0)  # Perfectly horizontal
+    
+    # Apply texture material
+    rings_mat = create_texture_material("SaturnRings", alpha=True)
+    if rings_mat:
+        rings.data.materials.append(rings_mat)
+
+    # CRITICAL FIX: Parent rings to Saturn's ORBIT empty, not the planet
+    # This prevents the rings from inheriting Saturn's axial tilt and wobbling
+    rings.parent = saturn_orbit_empty
+    
+    # Set rotation mode for animation
+    rings.rotation_mode = 'XYZ'
+    
+    # Add ONLY Z-axis rotation (flat spinning) - STARTS ONLY WHEN FULL SYSTEM IS SHOWN
+    driver = rings.driver_add("rotation_euler", 2).driver  # Z-axis only
+    var = driver.variables.new()
+    var.name = "frame"
+    var.targets[0].id_type = 'SCENE'
+    var.targets[0].id = bpy.context.scene
+    var.targets[0].data_path = "frame_current"
+    
+    # Smooth steady spinning - perfectly flat like your reference image
+    ring_spin_speed = 360 / 240  # degrees per frame - nice steady rotation
+    
+    # FIXED: Ring rotation starts ONLY when full solar system is shown
+    driver.expression = f"radians(max(0, (frame - {ROTATION_START_FRAME}) * {ring_spin_speed}))"
+    
+    print("🪐 Saturn Rings: FIXED - Perfectly flat disc, rotation starts with full system view!")
+    
+    return rings
+
+# === SUN ===
+bpy.ops.mesh.primitive_uv_sphere_add(radius=2, location=(0, 0, 0))
+sun = bpy.context.object
+sun.name = "Sun"
+bpy.ops.object.shade_smooth()
+bpy.ops.object.mode_set(mode='EDIT')
+bpy.ops.uv.unwrap(method='ANGLE_BASED', margin=0.001)
+bpy.ops.object.mode_set(mode='OBJECT')
+
+# Add sun rotation - STARTS ONLY WHEN FULL SYSTEM IS SHOWN
+sun.rotation_mode = 'XYZ'
+driver = sun.driver_add("rotation_euler", 2).driver
+var = driver.variables.new()
+var.name = "frame"
+var.targets[0].id_type = 'SCENE'
+var.targets[0].id = bpy.context.scene
+var.targets[0].data_path = "frame_current"
+# FIXED: Sun rotation starts only when full solar system is visible
+driver.expression = f"radians(max(0, (frame - {ROTATION_START_FRAME}) * {360 / (25 * 24)}))"
+
+sun_mat = create_texture_material("Sun", emission_strength=5.0)
+if sun_mat:
+    sun.data.materials.append(sun_mat)
+
+print("☀️ Sun rotation: CONTROLLED - Starts only when full solar system is shown!")
+
+# === PLANETS, MOON, AND PLUTO ===
+planet_objects = []  # Store planet objects for camera animation
+
+for i, planet in enumerate(planet_data):
+    name = planet["name"]
+    distance = planet["distance"]
+    radius = planet["radius"]
+    rotation_hours = planet["rotation_hours"]
+
+    bpy.ops.object.empty_add(type='PLAIN_AXES', location=(0, 0, 0))
+    orbit = bpy.context.object
+    orbit.name = f"{name}_Orbit"
+
+    create_orbit_line(distance, name)
+
+    bpy.ops.mesh.primitive_uv_sphere_add(radius=radius, location=(distance, 0, 0))
+    obj = bpy.context.object
+    obj.name = name
+    bpy.ops.object.shade_smooth()
+    bpy.ops.object.mode_set(mode='EDIT')
+    bpy.ops.uv.unwrap(method='ANGLE_BASED', margin=0.001)
+    bpy.ops.object.mode_set(mode='OBJECT')
+
+    # Special emission strength for Moon and Pluto - BRIGHTER PLUTO!
+    if name == "Moon":
+        emission_strength = 0.5
+    elif name == "Pluto":
+        emission_strength = 1.2  # MUCH BRIGHTER for visibility!
+    else:
+        emission_strength = 0.3
+        
+    mat = create_texture_material(name, emission_strength=emission_strength)
+    if mat:
+        obj.data.materials.append(mat)
+
+    # Create FIXED Saturn rings (no wobbling!)
+    if name == "Saturn":
+        saturn_rings = create_saturn_rings(orbit, distance, radius)
+
+    obj.parent = orbit
+    planet_objects.append({"object": obj, "orbit": orbit, "data": planet})
+
+    # === CONTROLLED PLANET SELF-ROTATION - STARTS ONLY WHEN FULL SYSTEM IS SHOWN ===
+    obj.rotation_mode = 'XYZ'
+    
+    # Add axial tilt for planets - FIXED POSITIONS
+    axial_tilts = {
+        "Earth": 23.5,
+        "Mars": 25.2,
+        "Saturn": 26.7,  # Saturn's axial tilt (rings won't inherit this now!)
+        "Uranus": 97.8,  # Uranus rotates on its side
+        "Neptune": 28.3,
+        "Moon": 6.7,
+        "Pluto": 122.5
+    }
+    
+    # Set initial axial tilt (X-axis)
+    if name in axial_tilts:
+        obj.rotation_euler[0] = math.radians(axial_tilts[name])
+    
+    # Add CONTROLLED Z-axis rotation - NO ROTATION DURING CLOSE-UPS!
+    driver = obj.driver_add("rotation_euler", 2).driver  # Z-axis only
+    var = driver.variables.new()
+    var.name = "frame"
+    var.targets[0].id_type = 'SCENE'
+    var.targets[0].id = bpy.context.scene
+    var.targets[0].data_path = "frame_current"
+    
+    # Calculate rotation speed (degrees per frame) - ONE DIRECTION ONLY
+    if rotation_hours != 0:
+        rotation_speed = 360 / abs(rotation_hours)  # Always positive for steady rotation
+        if rotation_hours < 0:  # Retrograde planets
+            rotation_speed = -rotation_speed
+    else:
+        rotation_speed = 0
+    
+    # CRITICAL FIX: Planet self-rotation starts ONLY when full solar system is shown
+    driver.expression = f"radians(max(0, (frame - {ROTATION_START_FRAME}) * {rotation_speed}))"
+    
+    print(f"🚫➡️✅ {name}: ROTATION CONTROLLED - Silent during close-ups, starts at frame {ROTATION_START_FRAME}")
+
+    # === Add name label - BIGGER FOR PLUTO! ===
+    label_height = radius + 0.3
+    
+    bpy.ops.object.text_add(location=(distance, 0, label_height))
+    label = bpy.context.object
+    label.name = f"{name}_Label"
+    
+    label.data.body = f"{name}"
+    
+    # BIGGER LABEL FOR PLUTO!
+    if name == "Pluto":
+        label.data.size = 0.8  # Much bigger text for Pluto
+        label.data.extrude = 0.08  # Thicker text
+    else:
+        label.data.size = max(0.4, radius * 0.6)
+        label.data.extrude = 0.03
+    
+    label.data.align_x = 'CENTER'
+    label.data.align_y = 'CENTER'
+    label.rotation_euler = (math.radians(90), 0, 0)
+    label.parent = orbit
+    
+    # Add emission material for labels
+    label_mat = bpy.data.materials.new(name=f"{name}_LabelMat")
+    label_mat.use_nodes = True
+    label_nodes = label_mat.node_tree.nodes
+    label_links = label_mat.node_tree.links
+    
+    for node in label_nodes:
+        label_nodes.remove(node)
+    
+    output = label_nodes.new(type='ShaderNodeOutputMaterial')
+    emission = label_nodes.new(type='ShaderNodeEmission')
+    
+    # Special colors for different celestial bodies - BRIGHTER PLUTO!
+    if name == "Moon":
+        emission.inputs['Color'].default_value = (0.9, 0.9, 1.0, 1.0)  # Bluish-white for Moon
+        emission.inputs['Strength'].default_value = 2.0
+    elif name == "Pluto":
+        emission.inputs['Color'].default_value = (1.0, 0.8, 0.2, 1.0)  # BRIGHT YELLOW-ORANGE for Pluto
+        emission.inputs['Strength'].default_value = 4.0  # MUCH BRIGHTER!
+    else:
+        emission.inputs['Color'].default_value = (1.0, 1.0, 0.8, 1.0)  # Warm white
+        emission.inputs['Strength'].default_value = 2.0
+    
+    label_links.new(emission.outputs['Emission'], output.inputs['Surface'])
+    label.data.materials.append(label_mat)
+
+    # Animate orbital rotation - SLOWER MOTION
+    orbit.rotation_mode = 'XYZ'
+    driver = orbit.driver_add("rotation_euler", 2).driver
+    var = driver.variables.new()
+    var.name = "frame"
+    var.targets[0].id_type = 'SCENE'
+    var.targets[0].id = bpy.context.scene
+    var.targets[0].data_path = "frame_current"
+    
+    # 🐌 SLOWER ORBITAL MOTION: Reduced speed multiplier from 10x to 2x
+    speed = (360 / planet["period"]) * ORBITAL_SPEED_MULTIPLIER
+    
+    # Orbital rotation starts at ROTATION_START_FRAME
+    driver.expression = f"radians(max(0, (frame - {ROTATION_START_FRAME}) * {speed}))"
+    
+    # Calculate orbital period in frames
+    frames_per_orbit = planet["period"] / ORBITAL_SPEED_MULTIPLIER
+    print(f"🌍 {name}: Orbital period = {planet['period']} days, Speed = {speed:.4f}°/frame, Frames per orbit = {frames_per_orbit:.1f}")
+
+# === BACKGROUND ===
+def set_background(name):
+    path = TEXTURE_PATHS.get(name)
+    if not path:
+        print(f"❌ No background path found")
+        return
+    try:
+        img = bpy.data.images.load(path)
+        print(f"✅ Loaded background: {path}")
+    except Exception as e:
+        print(f"❌ Failed to load background: {e}")
+        return
+
+    world = bpy.data.worlds["World"]
+    world.use_nodes = True
+    nodes = world.node_tree.nodes
+    links = world.node_tree.links
+
+    for node in nodes:
+        nodes.remove(node)
+
+    bg_node = nodes.new(type='ShaderNodeBackground')
+    bg_node.inputs['Strength'].default_value = 0.5
+    env_tex = nodes.new(type='ShaderNodeTexEnvironment')
+    output_node = nodes.new(type='ShaderNodeOutputWorld')
+    env_tex.image = img
+
+    links.new(env_tex.outputs['Color'], bg_node.inputs['Color'])
+    links.new(bg_node.outputs['Background'], output_node.inputs['Surface'])
+
+set_background("Stars")
+
+# === CAMERA ===
+bpy.ops.object.camera_add(location=(0, -80, 30), rotation=(math.radians(65), 0, 0))
+camera = bpy.context.object
+camera.name = "MainCamera"
+bpy.context.scene.camera = camera
+
+# === CAMERA ANIMATION - PERFECT PLUTO POSITIONING ===
+# Start with sun close-up
+start_frame = 1
+camera.location = (0, -5, 2)
+camera.rotation_euler = (math.radians(80), 0, 0)
+camera.keyframe_insert(data_path="location", frame=start_frame)
+camera.keyframe_insert(data_path="rotation_euler", frame=start_frame)
+
+current_frame = start_frame
+
+# Zoom into each planet/moon/Pluto
+for i, planet_info in enumerate(planet_objects):
+    planet_obj = planet_info["object"]
+    planet_data_item = planet_info["data"]
+    
+    distance = planet_data_item["distance"]
+    radius = planet_data_item["radius"]
+    name = planet_data_item["name"]
+    
+    # Calculate camera position - PERFECT PLUTO FIX!
+    if name == "Pluto":
+        # OPTIMAL CAMERA POSITION: Same height as Pluto, close distance, perfect angle
+        camera_x = distance - 1.0    # Close to Pluto's orbit but not too close
+        camera_y = -2.0             # Moderate distance for good view
+        camera_z = 1.0              # SAME HEIGHT AS PLUTO - not lowered!
+        
+        # Calculate perfect angle to look directly at Pluto
+        # Point camera towards Pluto's orbital position
+        import mathutils
+        pluto_pos = mathutils.Vector((distance, 0, 0))
+        camera_pos = mathutils.Vector((camera_x, camera_y, camera_z))
+        direction = pluto_pos - camera_pos
+        
+        # Create rotation to look at Pluto
+        rot_quat = direction.to_track_quat('-Z', 'Y')
+        camera.rotation_euler = rot_quat.to_euler()
+        
+        print(f"🔧 PLUTO CAMERA PERFECT: Position=({camera_x:.2f}, {camera_y:.2f}, {camera_z:.2f})")
+        print(f"🔧 PLUTO CAMERA PERFECT: Looking directly at Pluto at ({distance:.2f}, 0, 0)")
+        
+    elif name == "Saturn":
+        camera_distance = max(radius * 12, 4.0)  # Extra distance for Saturn rings
+        camera_x = distance + camera_distance * 0.7
+        camera_y = -camera_distance * 0.7
+        camera_z = radius * 3
+        camera.rotation_euler = (math.radians(70), 0, math.radians(45))
+    elif name == "Moon":
+        camera_distance = max(radius * 10, 2.5)  # Closer view for Moon
+        camera_x = distance + camera_distance * 0.7
+        camera_y = -camera_distance * 0.7
+        camera_z = radius * 3
+        camera.rotation_euler = (math.radians(70), 0, math.radians(45))
+    else:
+        camera_distance = max(radius * 8, 3.0)
+        camera_x = distance + camera_distance * 0.7
+        camera_y = -camera_distance * 0.7
+        camera_z = radius * 3
+        camera.rotation_euler = (math.radians(70), 0, math.radians(45))
+    
+    # Zoom in to celestial body
+    zoom_in_frame = current_frame + 24
+    camera.location = (camera_x, camera_y, camera_z)
+    
+    camera.keyframe_insert(data_path="location", frame=zoom_in_frame)
+    camera.keyframe_insert(data_path="rotation_euler", frame=zoom_in_frame)
+    
+    # Hold on celestial body
+    hold_frame = zoom_in_frame + ZOOM_DURATION - 24
+    camera.keyframe_insert(data_path="location", frame=hold_frame)
+    camera.keyframe_insert(data_path="rotation_euler", frame=hold_frame)
+    
+    current_frame = hold_frame
+
+# Zoom out to show full solar system (including Pluto)
+zoom_out_frame = current_frame + ZOOM_OUT_DURATION
+camera.location = (0, -95, 40)  # Even further back to see Pluto's orbit clearly
+camera.rotation_euler = (math.radians(65), 0, 0)
+camera.keyframe_insert(data_path="location", frame=zoom_out_frame)
+camera.keyframe_insert(data_path="rotation_euler", frame=zoom_out_frame)
+
+# Set interpolation to smooth
+for fcurve in camera.animation_data.action.fcurves:
+    for keyframe in fcurve.keyframe_points:
+        keyframe.interpolation = 'BEZIER'
+        keyframe.handle_left_type = 'AUTO'
+        keyframe.handle_right_type = 'AUTO'
+
+# === LIGHTS ===
+bpy.ops.object.light_add(type='SUN', location=(0, 0, 30))
+main_light = bpy.context.object
+main_light.data.energy = 5.0
+main_light.data.use_shadow = True
+
+bpy.ops.object.light_add(type='AREA', location=(0, 0, 50))
+fill_light = bpy.context.object
+fill_light.data.energy = 2.0
+fill_light.data.size = 100
+fill_light.name = "AmbientLight"
+
+# Add EXTRA LIGHT specifically for Pluto visibility
+bpy.ops.object.light_add(type='POINT', location=(30, 0, 5))  # Near Pluto's orbit
+pluto_light = bpy.context.object
+pluto_light.data.energy = 8.0  # Bright light for Pluto
+pluto_light.data.shadow_soft_size = 0.1
+pluto_light.name = "PlutoSpotlight"
+print("💡 Added extra light for Pluto visibility!")
+
+# === VIEWPORT TO RENDERED ===
+for area in bpy.context.screen.areas:
+    if area.type == 'VIEW_3D':
+        for space in area.spaces:
+            if space.type == 'VIEW_3D':
+                space.shading.type = 'RENDERED'
+                                </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <a href="#" class="btn btn-primary w-100" download="solarsystem.py">
+                        <i class="fas fa-download"></i> Download Script
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer"></div>
+        <script>
+            fetch('../layouts/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                });
+
+            function copyCode(elementId) {
+                const codeElement = document.getElementById(elementId);
+                const range = document.createRange();
+                range.selectNode(codeElement);
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
+                document.execCommand('copy');
+                window.getSelection().removeAllRanges();
+
+                // Show copied notification
+                const copyBtn = codeElement.parentElement.querySelector('.copy-btn');
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalText;
+                }, 2000);
+            }
+
+            // Orbital periods in Earth years for each celestial body
+            const orbitalPeriods = {
+                mercury: 0.2408467,  // ~88 days
+                venus: 0.61519726,   // ~225 days  
+                earth: 1.0,          // 365 days
+                mars: 1.8808158,     // ~687 days
+                jupiter: 11.862615,  // ~11.86 years
+                saturn: 29.447498,   // ~29.45 years
+                uranus: 84.016846,   // ~84.02 years
+                neptune: 164.79132,  // ~164.79 years
+                pluto: 248.00        // ~248 years
+            };
+
+            function calculatePlanetaryTime() {
+                const earthYears = parseFloat(document.getElementById('earthYearsInput').value) || 0;
+
+                // Update all celestial bodies
+                Object.keys(orbitalPeriods).forEach(bodyName => {
+                    // Find display elements for this celestial body
+                    const ageElements = document.querySelectorAll(`[data-body="${bodyName}"].age-display`);
+                    const revElements = document.querySelectorAll(`[data-body="${bodyName}"].revolution-display`);
+                    const timeComparisonElements = document.querySelectorAll(`[data-body="${bodyName}"] .time-comparison-text`);
+
+                    // Calculate age in planet years (Earth years / orbital period)
+                    const planetYears = earthYears / orbitalPeriods[bodyName];
+
+                    // Update age display
+                    ageElements.forEach(el => {
+                        if (planetYears >= 1000000) {
+                            el.textContent = (planetYears / 1000000).toFixed(2) + ' million years';
+                        } else if (planetYears >= 1000) {
+                            el.textContent = (planetYears / 1000).toFixed(2) + ' thousand years';
+                        } else if (planetYears >= 1) {
+                            el.textContent = planetYears.toFixed(2) + ' years';
+                        } else if (planetYears >= 0.01) {
+                            el.textContent = planetYears.toFixed(2) + ' years';
+                        } else {
+                            el.textContent = planetYears.toFixed(4) + ' years';
+                        }
+                    });
+
+                    // Calculate revolutions (how many times the planet completes its orbit)
+                    const revolutions = earthYears / orbitalPeriods[bodyName];
+                    revElements.forEach(el => {
+                        if (revolutions >= 1000000) {
+                            el.textContent = (revolutions / 1000000).toFixed(2) + ' million';
+                        } else if (revolutions >= 1000) {
+                            el.textContent = (revolutions / 1000).toFixed(2) + ' thousand';
+                        } else {
+                            el.textContent = revolutions.toFixed(2);
+                        }
+                    });
+
+                    // Update time comparison text
+                    timeComparisonElements.forEach(el => {
+                        if (earthYears === 0) {
+                            el.textContent = `In 1 Earth year, ${capitalize(bodyName)} experiences ${(1 / orbitalPeriods[bodyName]).toFixed(2)} of its own years`;
+                        } else if (earthYears === 1) {
+                            el.textContent = `In 1 Earth year, ${capitalize(bodyName)} experiences ${(1 / orbitalPeriods[bodyName]).toFixed(2)} of its own years`;
+                        } else {
+                            el.textContent = `In ${earthYears} Earth years, ${capitalize(bodyName)} experiences ${planetYears.toFixed(2)} of its own years`;
+                        }
+                    });
+                });
+
+                // Show success animation
+                if (earthYears >= 0) {
+                    const button = document.querySelector('button[onclick="calculatePlanetaryTime()"]');
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '<i class="fas fa-check"></i> Calculated!';
+                    button.classList.add('btn-success');
+                    button.classList.remove('btn-cosmic');
+
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.classList.remove('btn-success');
+                        button.classList.add('btn-cosmic');
+                    }, 2000);
+                }
+            }
+
+            function capitalize(word) {
+                return word.charAt(0).toUpperCase() + word.slice(1);
+            }
+
+            function setEarthYears(years) {
+                document.getElementById('earthYearsInput').value = years;
+                calculatePlanetaryTime();
+            }
+
+            // Allow Enter key to trigger calculation
+            document.getElementById('earthYearsInput').addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    calculatePlanetaryTime();
+                }
+            });
+
+            // Initialize with default values
+            document.addEventListener('DOMContentLoaded', function () {
+                calculatePlanetaryTime();
+            });
+
+            // Add some visual effects
+            document.addEventListener('DOMContentLoaded', function () {
+                // Add hover effects to planet cards
+                const planetCards = document.querySelectorAll('.step-card');
+                planetCards.forEach(card => {
+                    card.addEventListener('mouseenter', function () {
+                        this.style.transform = 'translateY(-10px) scale(1.02)';
+                    });
+
+                    card.addEventListener('mouseleave', function () {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    });
+                });
+
+                // Add floating animation to planet emojis
+                const planetEmojis = document.querySelectorAll('.planet-emoji');
+                planetEmojis.forEach((emoji, index) => {
+                    emoji.style.animation = `float 3s ease-in-out infinite ${index * 0.2}s`;
+                });
+            });
+
+            // Add CSS for floating animation
+            const style = document.createElement('style');
+            style.textContent = `
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-5px); }
+            }
+        `;
+            document.head.appendChild(style);
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
