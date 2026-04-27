@@ -1,0 +1,497 @@
+/* Shared project / subpage layout (used by index featured grid + project HTML pages) */
+
+.section-head-centered {
+  text-align: center;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-head-centered p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-head-centered h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-head-centered h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 3.5rem;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), #5ed4e8);
+}
+
+.featured-projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 800px) {
+  .featured-projects-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+    align-items: stretch;
+  }
+}
+
+.featured-project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.featured-project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  border-color: rgba(124, 240, 196, 0.2);
+}
+
+.featured-project-thumb {
+  aspect-ratio: 16 / 10;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255, 120, 80, 0.35), transparent 45%),
+    radial-gradient(circle at 70% 60%, rgba(80, 140, 255, 0.2), transparent 50%),
+    linear-gradient(160deg, #0d0f16 0%, #1a1f2e 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.featured-project-thumb-roto {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 80%, rgba(180, 100, 60, 0.35), transparent 55%),
+    linear-gradient(180deg, #0a0c12 0%, #151820 100%);
+}
+
+.featured-project-body {
+  padding: 1.25rem 1.35rem 1.45rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-project-kicker {
+  margin: 0 0 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.95;
+}
+
+.featured-project-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin: 0 0 0.65rem;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(124, 240, 196, 0.5);
+}
+
+.featured-project-desc {
+  margin: 0 0 1rem;
+  font-size: 0.98rem;
+  color: var(--muted);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.featured-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* ——— Subpages (solar-system, rotoscope) ——— */
+
+.project-page-main {
+  max-width: 960px;
+}
+
+.project-back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.project-back:hover {
+  color: var(--accent);
+}
+
+.project-page-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.85rem, 4vw, 2.5rem);
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.project-page-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 3.5rem;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), #5ed4e8);
+}
+
+.project-lede {
+  text-align: center;
+  color: var(--muted);
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+}
+
+.project-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.body-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.body-nav a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  color: var(--muted);
+}
+
+.body-nav a:hover {
+  color: var(--accent);
+  background: rgba(124, 240, 196, 0.08);
+}
+
+.section-block h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  text-align: center;
+  margin: 0 0 1.75rem;
+  position: relative;
+  padding-bottom: 0.65rem;
+}
+
+.section-block h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), #5ed4e8);
+}
+
+.celestial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 800px) {
+  .celestial-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.celestial-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem 1.35rem;
+}
+
+.celestial-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 0.85rem;
+  color: var(--accent);
+}
+
+.planet-stats {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.92rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.stat-item:last-child {
+  margin-bottom: 0;
+}
+
+.stat-label {
+  color: var(--muted);
+  min-width: 7.5rem;
+}
+
+.stat-value {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.time-comparison {
+  border: 1px solid rgba(124, 240, 196, 0.35);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.time-comparison strong {
+  color: var(--accent);
+  margin-right: 0.35rem;
+}
+
+.media-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #000;
+}
+
+.media-frame iframe,
+.media-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+.video-frame-placeholder {
+  background: radial-gradient(circle at 50% 35%, rgba(124, 240, 196, 0.09), transparent 55%), #07090e;
+}
+
+.video-placeholder-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(1rem, 4vw, 2rem);
+  border: 1px dashed rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  margin: 0;
+}
+
+.video-placeholder-title {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.video-placeholder-caption {
+  margin: 0;
+  max-width: 22rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.details-list {
+  color: var(--muted);
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 0;
+}
+
+.details-list li {
+  margin-bottom: 0.35rem;
+}
+
+/* Solar age calculator */
+.solar-calculator-card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1.5rem 1.35rem 1.35rem;
+  background: #2b2b2b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.solar-calculator-card h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-align: center;
+  margin: 0 0 1.15rem;
+  color: var(--text);
+}
+
+.calc-input-row {
+  display: flex;
+  flex-wrap: nowrap;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.calc-input-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.85rem 1.15rem;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.calc-input-row button {
+  flex-shrink: 0;
+  padding: 0.85rem 1.25rem;
+  border: none;
+  background: linear-gradient(135deg, #00bfff, #22d3ee);
+  color: #0a0c12;
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: filter 0.2s;
+}
+
+.calc-input-row button:hover {
+  filter: brightness(1.08);
+}
+
+.calc-input-row button.is-done {
+  background: linear-gradient(135deg, #34d399, #10b981);
+}
+
+.solar-calculator-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.45;
+}
+
+/* Rotoscope weekly placeholders */
+.weekly-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .weekly-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .weekly-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.week-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1rem 1.1rem;
+}
+
+.week-card h4 {
+  margin: 0 0 0.65rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.week-placeholder {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 1rem;
+}

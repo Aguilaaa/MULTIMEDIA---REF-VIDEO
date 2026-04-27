@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>3D Solar System | Multimedia Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="project-pages.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="index.html" class="logo">Portfolio</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#portfolio">Featured projects</a>
+        <a href="index.html#about">About</a>
+      </nav>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <div id="mobile-nav" class="mobile-nav" hidden>
+      <a href="index.html#home">Home</a>
+      <a href="index.html#portfolio">Featured projects</a>
+      <a href="index.html#about">About</a>
+    </div>
+
+    <main class="section project-page-main">
+      <a href="index.html#portfolio" class="project-back">← Back to featured projects</a>
+
+      <h1 class="project-page-title">3D Solar System</h1>
+      <p class="project-lede">
+        A Blender animation with procedural textures, orbital motion, and Python-driven scene setup—full overview below,
+        plus per-body stats tied to the age calculator.
+      </p>
+      <div class="project-badges">
+        <span class="project-tag">Blender</span>
+        <span class="project-tag">3D Modeling</span>
+        <span class="project-tag">Python Script</span>
+      </div>
+
+      <section class="section-block">
+        <div class="video-frame video-frame-placeholder" role="region" aria-label="Full animation (placeholder)">
+          <div class="video-placeholder-inner">
+            <p class="video-placeholder-title">Full solar system animation</p>
+            <p class="video-placeholder-caption">
+              Placeholder — replace with your own embed or hosted video when the final export is ready.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block" aria-labelledby="details-heading">
+        <h2 id="details-heading">Project details</h2>
+        <p style="color: var(--muted); margin-bottom: 1rem">
+          Built in Blender 3.3 with Python in the Scripting workspace. High-resolution textures from
+          <a href="https://www.solarsystemscope.com/textures/" target="_blank" rel="noopener noreferrer"
+            >Solar System Scope</a
+          >. Script assets and notes are organized for Sun and each planet.
+        </p>
+        <ul class="details-list">
+          <li><strong style="color: var(--text)">Render:</strong> ~13.5 hours; 1920×1080 @ 24 fps; 3500 frames (~2 min 25 s).</li>
+          <li><strong style="color: var(--text)">Pipeline:</strong> Cycles, GPU-focused settings, camera tour from Sun through planets, zoom-out system view.</li>
+          <li>
+            <strong style="color: var(--text)">Python scripts:</strong>
+            <a
+              href="https://drive.google.com/drive/folders/1eVlGBxb9bhEMnWtpwL9aerD9mC7Apojv?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Sun and planets (Google Drive)</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section class="section-block" id="age-calculator" aria-labelledby="calc-heading">
+        <h2 id="calc-heading">Solar System age calculator</h2>
+        <div class="solar-calculator-card">
+          <h3><span aria-hidden="true">🚀</span> Calculate time &amp; motion in the solar system</h3>
+          <div class="calc-input-row">
+            <input
+              type="number"
+              id="earthYearsInput"
+              min="0"
+              step="0.1"
+              value="1"
+              aria-label="Earth years"
+              placeholder="Enter Earth years"
+            />
+            <button type="button" id="calcButton" data-label="Calculate">Calculate</button>
+          </div>
+          <p class="solar-calculator-hint">
+            <span aria-hidden="true">ⓘ</span>
+            Enter Earth years to update age, revolutions, and comparison text for each planet card below (Sun remains
+            fixed at cosmological age).
+          </p>
+        </div>
+      </section>
+
+      <nav class="body-nav" aria-label="Celestial bodies on this page">
+        <a href="#sun">Sun</a>
+        <a href="#mercury">Mercury</a>
+        <a href="#venus">Venus</a>
+        <a href="#earth">Earth</a>
+        <a href="#mars">Mars</a>
+        <a href="#jupiter">Jupiter</a>
+        <a href="#saturn">Saturn</a>
+        <a href="#uranus">Uranus</a>
+        <a href="#neptune">Neptune</a>
+        <a href="#pluto">Pluto</a>
+      </nav>
+
+      <section class="section-block" id="celestial-bodies" aria-labelledby="bodies-heading">
+        <h2 id="bodies-heading">Celestial bodies &amp; orbital dynamics</h2>
+
+        <div class="celestial-grid">
+          <article id="sun" class="celestial-card">
+            <h3>Sun</h3>
+            <div class="planet-stats">
+              <div class="stat-item">
+                <span class="stat-label">Age (approx.)</span>
+                <span class="stat-value">4.6 billion years</span>
+              </div>
+            </div>
+            <div class="time-comparison">
+              <strong>Description:</strong>
+              <span class="time-comparison-text">
+                Our G-type main-sequence star: fusion in the core powers the solar system; surface granulation and
+                chromospheric activity appear in close-up renders.
+              </span>
+            </div>
+            <div class="media-frame">
+              <video autoplay muted loop playsinline>
+                <source src="videos/sun.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </article>
+
+          <article id="mercury" class="celestial-card">
+            <h3>Mercury</h3>
+            <div class="planet-stats">
+              <div class="stat-item">
+                <span class="stat-label">Age (local years)</span>
+                <span class="stat-value age-display" data-body="mercury">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Revolutions</span>
+                <span class="stat-value revolution-display" data-body="mercury">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Orbital period</span>
+                <span class="stat-value">88 Earth days</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Distance from Sun</span>
+                <span class="stat-value">57.9 million km</span>
+              </div>
+            </div>
+            <div class="time-comparison" data-body="mercury">
+              <strong>Orbital comparison:</strong>
+              <span class="time-comparison-text"></span>
+            </div>
+            <p style="color: var(--muted); font-size: 0.9rem; margin: -0.5rem 0 1rem">
+              The smallest major planet: extreme day/night temperatures and heavily cratered terrain.
+            </p>
+            <div class="media-frame">
+              <video autoplay muted loop playsinline>
+                <source src="videos/mercury.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </article>
+
+          <article id="venus" class="celestial-card">
+            <h3>Venus</h3>
+            <div class="planet-stats">
+              <div class="stat-item">
+                <span class="stat-label">Age (local years)</span>
+                <span class="stat-value age-display" data-body="venus">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Revolutions</span>
+                <span class="stat-value revolution-display" data-body="venus">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Orbital period</span>
+                <span class="stat-value">225 Earth days</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Distance from Sun</span>
+                <span class="stat-value">108.2 million km</span>
+              </div>
+            </div>
+            <div class="time-comparison" data-body="venus">
+              <strong>Orbital comparison:</strong>
+              <span class="time-comparison-text"></span>
+            </div>
+            <p style="color: var(--muted); font-size: 0.9rem; margin: -0.5rem 0 1rem">
+              Thick CO₂ clouds and a crushing greenhouse—often compared to Earth in size, not climate.
+            </p>
+            <div class="media-frame">
+              <video autoplay muted loop playsinline>
+                <source src="videos/venus.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </article>
+
+          <article id="earth" class="celestial-card">
+            <h3>Earth</h3>
+            <div class="planet-stats">
+              <div class="stat-item">
+                <span class="stat-label">Age (local years)</span>
+                <span class="stat-value age-display" data-body="earth">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Revolutions</span>
+                <span class="stat-value revolution-display" data-body="earth">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Orbital period</span>
+                <span class="stat-value">365.25 Earth days</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Distance from Sun</span>
+                <span class="stat-value">149.6 million km</span>
+              </div>
+            </div>
+            <div class="time-comparison" data-body="earth">
+              <strong>Orbital comparison:</strong>
+              <span class="time-comparison-text"></span>
+            </div>
+            <p style="color: var(--muted); font-size: 0.9rem; margin: -0.5rem 0 1rem">
+              The only known world with liquid surface oceans and active plate tectonics—your Blender close-up below
+              highlights clouds, oceans, and continental detail from the project textures and lighting.
+              <strong style="color: var(--text)">Featured clip:</strong>
+              <a href="https://youtu.be/KItMGlGh6Yo" target="_blank" rel="noopener noreferrer">Earth render (YouTube)</a>.
+            </p>
+            <div class="media-frame">
+              <iframe
+                src="https://www.youtube.com/embed/KItMGlGh6Yo"
+                title="Earth — Blender render"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </article>
+
+          <article id="mars" class="celestial-card">
+            <h3>Mars</h3>
+            <div class="planet-stats">
+              <div class="stat-item">
+                <span class="stat-label">Age (local years)</span>
+                <span class="stat-value age-display" data-body="mars">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Revolutions</span>
+                <span class="stat-value revolution-display" data-body="mars">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Orbital period</span>
+                <span class="stat-value">687 Earth days</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Distance from Sun</span>
+                <span class="stat-value">227.9 million km</span>
+              </div>
+            </div>
+            <div class="time-comparison" data-body="mars">
+              <strong>Orbital comparison:</strong>
+              <span class="time-comparison-text"></span>
+            </div>
+            <p style="color: var(--muted); font-size: 0.9rem; margin: -0.5rem 0 1rem">
+              Rust-colored dust, giant volcanoes, and ancient river valleys—prime target for exploration reels.
+            </p>
+            <div class="media-frame">
+              <video autoplay muted loop playsinline>
+                <source src="videos/mars.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </article>
+
+          <article id="jupiter" class="celestial-card">
+            <h3>Jupiter</h3>
+            <div class="planet-stats">
+              <div class="stat-item">
+                <span class="stat-label">Age (local years)</span>
+                <span class="stat-value age-display" data-body="jupiter">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Revolutions</span>
+                <span class="stat-value revolution-display" data-body="jupiter">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Orbital period</span>
+                <span class="stat-value">11.86 Earth years</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Distance from Sun</span>
+                <span class="stat-value">778.5 million km</span>
+              </div>
+            </div>
+            <div class="time-comparison" data-body="jupiter">
+              <strong>Orbital comparison:</strong>
+              <span class="time-comparison-text"></span>
+            </div>
+            <p style="color: var(--muted); font-size: 0.9rem; margin: -0.5rem 0 1rem">
+              Largest planet: turbulent belts, zones, and the long-lived Great Red Spot.
+            </p>
+            <div class="media-frame">
+              <video autoplay muted loop playsinline>
+                <source src="videos/jupiter.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </article>
+
+          <article id="saturn" class="celestial-card">
+            <h3>Saturn</h3>
+            <div class="planet-stats">
+              <div class="stat-item">
+                <span class="stat-label">Age (local years)</span>
+                <span class="stat-value age-display" data-body="saturn">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Revolutions</span>
+                <span class="stat-value revolution-display" data-body="saturn">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Orbital period</span>
+                <span class="stat-value">29.45 Earth years</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Distance from Sun</span>
+                <span class="stat-value">1.432 billion km</span>
+              </div>
+            </div>
+            <div class="time-comparison" data-body="saturn">
+              <strong>Orbital comparison:</strong>
+              <span class="time-comparison-text"></span>
+            </div>
+            <p style="color: var(--muted); font-size: 0.9rem; margin: -0.5rem 0 1rem">
+              Gas giant with an iconic icy ring system—great for wide shots in the timeline.
+            </p>
+            <div class="media-frame">
+              <video autoplay muted loop playsinline>
+                <source src="videos/saturn.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </article>
+
+          <article id="uranus" class="celestial-card">
+            <h3>Uranus</h3>
+            <div class="planet-stats">
+              <div class="stat-item">
+                <span class="stat-label">Age (local years)</span>
+                <span class="stat-value age-display" data-body="uranus">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Revolutions</span>
+                <span class="stat-value revolution-display" data-body="uranus">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Orbital period</span>
+                <span class="stat-value">84.02 Earth years</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Distance from Sun</span>
+                <span class="stat-value">2.867 billion km</span>
+              </div>
+            </div>
+            <div class="time-comparison" data-body="uranus">
+              <strong>Orbital comparison:</strong>
+              <span class="time-comparison-text"></span>
+            </div>
+            <p style="color: var(--muted); font-size: 0.9rem; margin: -0.5rem 0 1rem">
+              Ice giant tipped on its side—subtle blue-green tones from methane absorption.
+            </p>
+            <div class="media-frame">
+              <video autoplay muted loop playsinline>
+                <source src="videos/uranus.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </article>
+
+          <article id="neptune" class="celestial-card">
+            <h3>Neptune</h3>
+            <div class="planet-stats">
+              <div class="stat-item">
+                <span class="stat-label">Age (local years)</span>
+                <span class="stat-value age-display" data-body="neptune">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Revolutions</span>
+                <span class="stat-value revolution-display" data-body="neptune">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Orbital period</span>
+                <span class="stat-value">164.79 Earth years</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Distance from Sun</span>
+                <span class="stat-value">4.515 billion km</span>
+              </div>
+            </div>
+            <div class="time-comparison" data-body="neptune">
+              <strong>Orbital comparison:</strong>
+              <span class="time-comparison-text"></span>
+            </div>
+            <p style="color: var(--muted); font-size: 0.9rem; margin: -0.5rem 0 1rem">
+              Deep blue ice giant with the strongest measured winds in the solar system.
+            </p>
+            <div class="media-frame">
+              <video autoplay muted loop playsinline>
+                <source src="videos/neptune.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </article>
+
+          <article id="pluto" class="celestial-card">
+            <h3>Pluto (dwarf planet)</h3>
+            <div class="planet-stats">
+              <div class="stat-item">
+                <span class="stat-label">Age (local years)</span>
+                <span class="stat-value age-display" data-body="pluto">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Revolutions</span>
+                <span class="stat-value revolution-display" data-body="pluto">—</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Orbital period</span>
+                <span class="stat-value">248 Earth years</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">Distance from Sun</span>
+                <span class="stat-value">~5.9 billion km (avg.)</span>
+              </div>
+            </div>
+            <div class="time-comparison" data-body="pluto">
+              <strong>Orbital comparison:</strong>
+              <span class="time-comparison-text"></span>
+            </div>
+            <p style="color: var(--muted); font-size: 0.9rem; margin: -0.5rem 0 1rem">
+              A Kuiper Belt world with nitrogen ice, rugged geology, and a large moon (Charon). The embedded shot is your
+              dedicated Pluto render pass—surface contrast reads clearly against the black of space.
+              <strong style="color: var(--text)">Featured clip:</strong>
+              <a href="https://youtu.be/ByTeNpNgHdE" target="_blank" rel="noopener noreferrer">Pluto render (YouTube)</a>.
+            </p>
+            <div class="media-frame">
+              <iframe
+                src="https://www.youtube.com/embed/ByTeNpNgHdE"
+                title="Pluto — Blender render"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Multimedia portfolio</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="index.html">Home</a>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="solar-system.js"></script>
+  </body>
+</html>

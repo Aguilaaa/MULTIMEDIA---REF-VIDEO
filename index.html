@@ -6,6 +6,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Multimedia Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="project-pages.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -15,7 +16,7 @@
     <a href="#home" class="logo">Portfolio</a>
     <nav class="nav" aria-label="Primary">
       <a href="#home">Home</a>
-      <a href="#portfolio">Portfolio</a>
+      <a href="#portfolio">Featured projects</a>
       <a href="#about">About</a>
     </nav>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
@@ -25,7 +26,7 @@
 
   <div id="mobile-nav" class="mobile-nav" hidden>
     <a href="#home">Home</a>
-    <a href="#portfolio">Portfolio</a>
+    <a href="#portfolio">Featured projects</a>
     <a href="#about">About</a>
   </div>
 
@@ -43,72 +44,45 @@
     </section>
 
     <section id="portfolio" class="section section-portfolio">
-      <div class="section-head">
-        <h2>Portfolio</h2>
-        <p>Interactive 3D and video pieces — solar system build coming next; reference video for your rotoscope task is below.</p>
+      <div class="section-head section-head-centered">
+        <h2>Featured Projects</h2>
+        <p>Open each project for the full breakdown, embedded work, and interactive pieces.</p>
       </div>
 
-      <div class="portfolio-grid">
-        <article class="card card-solar">
-          <header class="card-head">
-            <h3>3D Solar System</h3>
-            <span class="badge">Placeholder</span>
-          </header>
-          <div class="solar-placeholder" id="solar-system-root" role="region" aria-label="3D solar system (coming soon)">
-            <div class="solar-placeholder-inner">
-              <span class="orbit-ring"></span>
-              <span class="orbit-dot"></span>
-              <p>3D scene reserved — content will go here.</p>
+      <div class="featured-projects-grid">
+        <a href="solar-system.html" class="featured-project-card featured-project-card-solar">
+          <div class="featured-project-thumb" aria-hidden="true"></div>
+          <div class="featured-project-body">
+            <p class="featured-project-kicker">3D rendering</p>
+            <h3 class="featured-project-title">3D Solar System</h3>
+            <p class="featured-project-desc">
+              Realistic celestial models with textures, lighting, and orbital motion—built in Blender with Python for
+              procedural setup and animation control.
+            </p>
+            <div class="featured-project-tags">
+              <span class="project-tag">Blender</span>
+              <span class="project-tag">3D Modeling</span>
+              <span class="project-tag">Python Script</span>
             </div>
           </div>
-        </article>
+        </a>
 
-        <article class="card card-video">
-          <header class="card-head">
-            <h3>Reference video</h3>
-            <span class="badge badge-live">For rotoscope</span>
-          </header>
-          <div class="video-frame">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/KNzw53-oxQc?feature=oembed"
-              title="Reference video for rotoscope project"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <div class="weekly-progress">
-            <h4>Rotoscope Weekly Progress</h4>
-            <div class="weekly-progress-list">
-              <div class="weekly-item">
-                <p class="weekly-label">Week 1</p>
-                <div class="video-frame video-frame-small">
-                  <iframe
-                    src="https://www.youtube.com/embed/9W35hjpVSZc"
-                    title="Rotoscope weekly progress week 1"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-              <div class="weekly-item">
-                <p class="weekly-label">Week 2</p>
-                <div class="video-frame video-frame-small">
-                  <iframe
-                    src="https://www.youtube.com/embed/2X7RBZ2-GwE"
-                    title="Rotoscope weekly progress week 2"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
+        <a href="rotoscope.html" class="featured-project-card featured-project-card-roto">
+          <div class="featured-project-thumb featured-project-thumb-roto" aria-hidden="true"></div>
+          <div class="featured-project-body">
+            <p class="featured-project-kicker">Rotoscope</p>
+            <h3 class="featured-project-title">1-minute Video Rotoscope</h3>
+            <p class="featured-project-desc">
+              Frame-by-frame tracing and isolation of subjects for stylized motion and compositing—rotoscoping for
+              animation and visual effects pipelines.
+            </p>
+            <div class="featured-project-tags">
+              <span class="project-tag">Adobe After Effects</span>
+              <span class="project-tag">Adobe Premiere Pro</span>
+              <span class="project-tag">CapCut</span>
             </div>
           </div>
-        </article>
+        </a>
       </div>
     </section>
 
@@ -116,8 +90,8 @@
       <div class="about-inner">
         <h2>About</h2>
         <p>
-          This site is built with plain HTML, CSS, and JavaScript — no frameworks. The portfolio section will grow
-          with a real-time 3D solar system and your rotoscope piece when that work is ready.
+          This site is built with plain HTML, CSS, and JavaScript — no frameworks. Featured projects link to dedicated
+          pages for the Blender solar-system piece and the rotoscope workflow.
         </p>
         <p>
           Replace this copy with your bio, tools you use (e.g. Blender, After Effects, clip studio), and what kind of
