@@ -495,3 +495,107 @@
   font-style: italic;
   margin-top: 1rem;
 }
+
+/* Rotoscope step-by-step workflow */
+.workflow-intro {
+  color: var(--muted);
+  margin: -0.75rem auto 1.75rem;
+  text-align: center;
+  max-width: 44rem;
+  line-height: 1.6;
+}
+
+.workflow-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 720px) {
+  .workflow-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.workflow-step {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.workflow-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: rgba(124, 240, 196, 0.12);
+  border: 1px solid rgba(124, 240, 196, 0.35);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.workflow-step h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.workflow-step p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.workflow-step-media {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+}
+
+.workflow-step-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.workflow-step kbd {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  font-family: inherit;
+  font-size: 0.82rem;
+  color: var(--text);
+}
+
+.workflow-step-tip {
+  margin-top: auto;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.45;
+}
+
+.workflow-step-tip strong {
+  color: var(--accent);
+  font-weight: 600;
+}
