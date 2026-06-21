@@ -63,128 +63,6 @@
         </div>
       </section>
 
-      <section class="section-block" aria-labelledby="workflow-heading">
-        <h2 id="workflow-heading">Step-by-step workflow</h2>
-        <p class="workflow-intro">
-          This is the pipeline used for the project: split the source clip into manageable 5-second segments, rotoscope
-          each part in After Effects, render every segment, then stitch the finished passes together in CapCut.
-        </p>
-
-        <ol class="workflow-steps">
-          <li class="workflow-step">
-            <span class="workflow-step-number" aria-hidden="true">1</span>
-            <h3>Split the video into 5-second clips</h3>
-            <p>
-              In <strong style="color: var(--text)">CapCut</strong> (or Premiere Pro), trim your reference footage into
-              roughly <strong style="color: var(--text)">5-second segments</strong>. Shorter chunks are easier to
-              rotoscope, preview, and re-render if something goes wrong—and they keep After Effects from slowing down on
-              long compositions.
-            </p>
-            <p class="workflow-step-tip">
-              <strong>Tip:</strong> Export each segment as its own file before moving to After Effects.
-            </p>
-          </li>
-
-          <li class="workflow-step">
-            <span class="workflow-step-number" aria-hidden="true">2</span>
-            <h3>Create a composition from footage</h3>
-            <p>
-              Import one clip into After Effects, select it in the Project panel, then choose
-              <strong style="color: var(--text)">New Composition From Footage</strong>. After Effects builds a comp
-              that matches the clip’s resolution, frame rate, and duration automatically.
-            </p>
-            <div class="workflow-step-media">
-              <img
-                src="images/rotoscope-ae-composition-from-footage.png"
-                alt="After Effects start screen with New Composition From Footage highlighted"
-                loading="lazy"
-              />
-            </div>
-          </li>
-
-          <li class="workflow-step">
-            <span class="workflow-step-number" aria-hidden="true">3</span>
-            <h3>Duplicate layers for each element</h3>
-            <p>
-              Select the footage layer in the timeline and press <kbd>Ctrl + D</kbd> (Windows) or
-              <kbd>Cmd + D</kbd> (Mac) to duplicate it. Make one copy per part you plan to isolate—shirt, pants, skin,
-              hair, shoes, background, and so on.
-            </p>
-            <div class="workflow-step-media">
-              <img
-                src="images/rotoscope-ae-duplicate-layers.png"
-                alt="After Effects timeline showing multiple duplicated footage layers"
-                loading="lazy"
-              />
-            </div>
-          </li>
-
-          <li class="workflow-step">
-            <span class="workflow-step-number" aria-hidden="true">4</span>
-            <h3>Open a layer and activate Roto Brush</h3>
-            <p>
-              Double-click the layer you want to edit to open the Layer panel. Press <kbd>Alt + W</kbd> to switch to the
-              Roto Brush tool, then paint over the area that belongs on that layer. After Effects tracks the selection
-              forward and backward through the clip.
-            </p>
-            <p class="workflow-step-tip">
-              <strong>Tip:</strong> Hold <kbd>Alt</kbd> while brushing to subtract from the selection and clean up edges.
-            </p>
-          </li>
-
-          <li class="workflow-step">
-            <span class="workflow-step-number" aria-hidden="true">5</span>
-            <h3>Isolate each part on its own layer</h3>
-            <p>
-              Repeat the Roto Brush pass on every duplicated layer, masking only the element that layer represents. Work
-              one layer at a time—background and large shapes first, smaller details like hair and shoes last—so each
-              matte stays accurate.
-            </p>
-          </li>
-
-          <li class="workflow-step">
-            <span class="workflow-step-number" aria-hidden="true">6</span>
-            <h3>Add a fill color and freeze the rotoscope</h3>
-            <p>
-              With the layer selected, go to <strong style="color: var(--text)">Effect → Generate → Fill</strong> and
-              choose the solid color for that element. In the Effect Controls panel, click
-              <strong style="color: var(--text)">Freeze</strong> on the Roto Brush effect to lock the matte before moving
-              on to the next layer.
-            </p>
-          </li>
-
-          <li class="workflow-step">
-            <span class="workflow-step-number" aria-hidden="true">7</span>
-            <h3>Repeat for every remaining layer</h3>
-            <p>
-              Continue the same cycle—Roto Brush, Fill, Freeze—for each duplicate until every subject part has its own
-              colored layer. Stack layers from back to front so the composite reads clearly in the Composition panel.
-            </p>
-          </li>
-
-          <li class="workflow-step">
-            <span class="workflow-step-number" aria-hidden="true">8</span>
-            <h3>Render the composition</h3>
-            <p>
-              When a 5-second comp is finished, choose
-              <strong style="color: var(--text)">File → Export → Add to Render Queue</strong>. Set your output format
-              (H.264 / MP4 works well), pick a save location, then click <strong style="color: var(--text)">Render</strong>.
-              Repeat steps 2–8 for each clip segment.
-            </p>
-          </li>
-
-          <li class="workflow-step">
-            <span class="workflow-step-number" aria-hidden="true">9</span>
-            <h3>Assemble the final edit in CapCut</h3>
-            <p>
-              Import all rendered clips back into <strong style="color: var(--text)">CapCut</strong>, place them in
-              timeline order, and join them into one continuous sequence. Add titles, text, transitions, and any final
-              effects, then export the completed 1-minute rotoscope.
-            </p>
-          </li>
-        </ol>
-      </section>
-
       <section class="section-block" aria-labelledby="weekly-heading">
         <h2 id="weekly-heading">Weekly progress</h2>
         <p style="color: var(--muted); margin-bottom: 1.5rem; text-align: center; max-width: 42rem; margin-left: auto; margin-right: auto">
@@ -365,6 +243,128 @@
             allowfullscreen
           ></iframe>
         </div>
+      </section>
+
+      <section class="section-block" id="workflow" aria-labelledby="workflow-heading">
+        <h2 id="workflow-heading">Step-by-step workflow</h2>
+        <p class="workflow-intro">
+          This is the pipeline used for the project: split the source clip into manageable 5-second segments, rotoscope
+          each part in After Effects, render every segment, then stitch the finished passes together in CapCut.
+        </p>
+
+        <ol class="workflow-steps">
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">1</span>
+            <h3>Split the video into 5-second clips</h3>
+            <p>
+              In <strong style="color: var(--text)">CapCut</strong> (or Premiere Pro), trim your reference footage into
+              roughly <strong style="color: var(--text)">5-second segments</strong>. Shorter chunks are easier to
+              rotoscope, preview, and re-render if something goes wrong—and they keep After Effects from slowing down on
+              long compositions.
+            </p>
+            <p class="workflow-step-tip">
+              <strong>Tip:</strong> Export each segment as its own file before moving to After Effects.
+            </p>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">2</span>
+            <h3>Create a composition from footage</h3>
+            <p>
+              Import one clip into After Effects, select it in the Project panel, then choose
+              <strong style="color: var(--text)">New Composition From Footage</strong>. After Effects builds a comp
+              that matches the clip’s resolution, frame rate, and duration automatically.
+            </p>
+            <div class="workflow-step-media">
+              <img
+                src="images/rotoscope-ae-composition-from-footage.png"
+                alt="After Effects start screen with New Composition From Footage highlighted"
+                loading="lazy"
+              />
+            </div>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">3</span>
+            <h3>Duplicate layers for each element</h3>
+            <p>
+              Select the footage layer in the timeline and press <kbd>Ctrl + D</kbd> (Windows) or
+              <kbd>Cmd + D</kbd> (Mac) to duplicate it. Make one copy per part you plan to isolate—shirt, pants, skin,
+              hair, shoes, background, and so on.
+            </p>
+            <div class="workflow-step-media">
+              <img
+                src="images/rotoscope-ae-duplicate-layers.png"
+                alt="After Effects timeline showing multiple duplicated footage layers"
+                loading="lazy"
+              />
+            </div>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">4</span>
+            <h3>Open a layer and activate Roto Brush</h3>
+            <p>
+              Double-click the layer you want to edit to open the Layer panel. Press <kbd>Alt + W</kbd> to switch to the
+              Roto Brush tool, then paint over the area that belongs on that layer. After Effects tracks the selection
+              forward and backward through the clip.
+            </p>
+            <p class="workflow-step-tip">
+              <strong>Tip:</strong> Hold <kbd>Alt</kbd> while brushing to subtract from the selection and clean up edges.
+            </p>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">5</span>
+            <h3>Isolate each part on its own layer</h3>
+            <p>
+              Repeat the Roto Brush pass on every duplicated layer, masking only the element that layer represents. Work
+              one layer at a time—background and large shapes first, smaller details like hair and shoes last—so each
+              matte stays accurate.
+            </p>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">6</span>
+            <h3>Add a fill color and freeze the rotoscope</h3>
+            <p>
+              With the layer selected, go to <strong style="color: var(--text)">Effect → Generate → Fill</strong> and
+              choose the solid color for that element. In the Effect Controls panel, click
+              <strong style="color: var(--text)">Freeze</strong> on the Roto Brush effect to lock the matte before moving
+              on to the next layer.
+            </p>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">7</span>
+            <h3>Repeat for every remaining layer</h3>
+            <p>
+              Continue the same cycle—Roto Brush, Fill, Freeze—for each duplicate until every subject part has its own
+              colored layer. Stack layers from back to front so the composite reads clearly in the Composition panel.
+            </p>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">8</span>
+            <h3>Render the composition</h3>
+            <p>
+              When a 5-second comp is finished, choose
+              <strong style="color: var(--text)">File → Export → Add to Render Queue</strong>. Set your output format
+              (H.264 / MP4 works well), pick a save location, then click <strong style="color: var(--text)">Render</strong>.
+              Repeat steps 2–8 for each clip segment.
+            </p>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">9</span>
+            <h3>Assemble the final edit in CapCut</h3>
+            <p>
+              Import all rendered clips back into <strong style="color: var(--text)">CapCut</strong>, place them in
+              timeline order, and join them into one continuous sequence. Add titles, text, transitions, and any final
+              effects, then export the completed 1-minute rotoscope.
+            </p>
+          </li>
+        </ol>
       </section>
 
       <p class="disclaimer"><em>Disclaimer: This project was produced for academic purposes.</em></p>

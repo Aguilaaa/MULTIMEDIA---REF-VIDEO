@@ -98,5 +98,45 @@
       });
       calculatePlanetaryTime();
     }
+    initScriptActions();
   });
+
+  function initScriptActions() {
+    var scriptBase = "blender%20files/";
+    var codeIcon =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">' +
+      '<polyline points="16 18 22 12 16 6"></polyline>' +
+      '<polyline points="8 6 2 12 8 18"></polyline>' +
+      "</svg>";
+    var downloadIcon =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">' +
+      '<path d="M12 3v12"></path>' +
+      '<path d="M7 10l5 5 5-5"></path>' +
+      '<path d="M5 21h14"></path>' +
+      "</svg>";
+
+    document.querySelectorAll(".script-actions[data-script]").forEach(function (wrap) {
+      var script = wrap.getAttribute("data-script");
+      if (!script) return;
+
+      var href = scriptBase + encodeURIComponent(script);
+      var view = document.createElement("a");
+      view.className = "script-btn script-btn-view";
+      view.href = href;
+      view.target = "_blank";
+      view.rel = "noopener noreferrer";
+      view.innerHTML = codeIcon + "View";
+      view.setAttribute("aria-label", "View " + script + " in a new tab");
+
+      var download = document.createElement("a");
+      download.className = "script-btn script-btn-download";
+      download.href = href;
+      download.download = script;
+      download.innerHTML = downloadIcon + "Download";
+      download.setAttribute("aria-label", "Download " + script);
+
+      wrap.appendChild(view);
+      wrap.appendChild(download);
+    });
+  }
 })();

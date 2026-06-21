@@ -48,15 +48,23 @@
         <span class="project-tag">Python Script</span>
       </div>
 
-      <section class="section-block">
-        <div class="video-frame video-frame-placeholder" role="region" aria-label="Full animation (placeholder)">
-          <div class="video-placeholder-inner">
-            <p class="video-placeholder-title">Full solar system animation</p>
-            <p class="video-placeholder-caption">
-              Placeholder — replace with your own embed or hosted video when the final export is ready.
-            </p>
-          </div>
+      <section class="section-block" aria-labelledby="final-animation-heading">
+        <h2 id="final-animation-heading">Final solar system animation</h2>
+        <p style="color: var(--muted); margin-bottom: 1rem; text-align: center; max-width: 40rem; margin-left: auto; margin-right: auto">
+          Full Blender render — camera tour from the Sun through each planet and out to the system view.
+          <strong style="color: var(--text)">Watch on YouTube:</strong>
+          <a href="https://youtu.be/HU0uw1S0jaU" target="_blank" rel="noopener noreferrer">Final solar system (YouTube)</a>.
+        </p>
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/HU0uw1S0jaU"
+            title="Final 3D solar system animation"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
+        <div class="script-actions" data-script="final_render.py"></div>
       </section>
 
       <section class="section-block" aria-labelledby="details-heading">
@@ -151,9 +159,8 @@
                 allowfullscreen
               ></iframe>
             </div>
+            <div class="script-actions" data-script="Sun.py"></div>
           </article>
-
-          <article id="mercury" class="celestial-card">
             <h3>Mercury</h3>
             <div class="planet-stats">
               <div class="stat-item">
@@ -191,6 +198,7 @@
                 allowfullscreen
               ></iframe>
             </div>
+            <div class="script-actions" data-script="Mercury.py"></div>
           </article>
 
           <article id="venus" class="celestial-card">
@@ -231,6 +239,7 @@
                 allowfullscreen
               ></iframe>
             </div>
+            <div class="script-actions" data-script="Venus.py"></div>
           </article>
 
           <article id="earth" class="celestial-card">
@@ -272,6 +281,7 @@
                 allowfullscreen
               ></iframe>
             </div>
+            <div class="script-actions" data-script="Earth.py"></div>
           </article>
 
           <article id="mars" class="celestial-card">
@@ -312,6 +322,7 @@
                 allowfullscreen
               ></iframe>
             </div>
+            <div class="script-actions" data-script="Mars.py"></div>
           </article>
 
           <article id="jupiter" class="celestial-card">
@@ -353,6 +364,7 @@
                 allowfullscreen
               ></iframe>
             </div>
+            <div class="script-actions" data-script="Jupiter.py"></div>
           </article>
 
           <article id="saturn" class="celestial-card">
@@ -393,6 +405,7 @@
                 allowfullscreen
               ></iframe>
             </div>
+            <div class="script-actions" data-script="Saturn.py"></div>
           </article>
 
           <article id="uranus" class="celestial-card">
@@ -433,6 +446,7 @@
                 allowfullscreen
               ></iframe>
             </div>
+            <div class="script-actions" data-script="Uranus.py"></div>
           </article>
 
           <article id="neptune" class="celestial-card">
@@ -473,6 +487,7 @@
                 allowfullscreen
               ></iframe>
             </div>
+            <div class="script-actions" data-script="Neptune.py"></div>
           </article>
 
           <article id="pluto" class="celestial-card">
@@ -514,6 +529,7 @@
                 allowfullscreen
               ></iframe>
             </div>
+            <div class="script-actions" data-script="Pluto.py"></div>
           </article>
         </div>
       </section>

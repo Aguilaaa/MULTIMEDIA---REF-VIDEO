@@ -221,6 +221,11 @@
   padding-bottom: 0.65rem;
 }
 
+.project-page-main .section-block + .section-block {
+  margin-top: 3rem;
+  padding-top: 0.25rem;
+}
+
 .section-block h2::after {
   content: "";
   position: absolute;
@@ -598,4 +603,60 @@
 .workflow-step-tip strong {
   color: var(--accent);
   font-weight: 600;
+}
+
+/* Blender script view / download actions */
+.script-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.script-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.15rem;
+  border-radius: 0;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.15s ease, filter 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.script-btn svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.script-btn-view {
+  flex: 1 1 7rem;
+  color: var(--text);
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.82);
+}
+
+.script-btn-view:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: #fff;
+  color: #fff;
+}
+
+.script-btn-download {
+  flex: 1.35 1 9rem;
+  color: #111;
+  background: #f5c518;
+  border: 2px solid #f5c518;
+}
+
+.script-btn-download:hover {
+  filter: brightness(1.05);
+  color: #000;
 }
