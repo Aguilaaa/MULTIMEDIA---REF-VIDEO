@@ -660,3 +660,51 @@
   filter: brightness(1.05);
   color: #000;
 }
+
+/* Code viewer page */
+.code-view-main {
+  max-width: 900px;
+}
+
+.code-view-lede {
+  text-align: center;
+  color: var(--muted);
+  max-width: 40rem;
+  margin: -0.5rem auto 1.25rem;
+}
+
+.code-view-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.85rem;
+}
+
+.code-view-toolbar .script-btn-download {
+  flex: 0 0 auto;
+}
+
+.code-view-panel {
+  margin: 0;
+  padding: 1.15rem 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: #0d1117;
+  overflow: auto;
+  max-height: min(72vh, 720px);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #e6edf3;
+  white-space: pre;
+  tab-size: 4;
+}
+
+.code-view-panel.is-error {
+  border-color: rgba(248, 113, 113, 0.45);
+  color: #fca5a5;
+}
+
+.code-view-panel code {
+  font: inherit;
+  white-space: inherit;
+}

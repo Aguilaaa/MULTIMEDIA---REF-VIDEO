@@ -120,13 +120,15 @@
       if (!script) return;
 
       var href = scriptBase + encodeURIComponent(script);
+      var viewHref = "code-view.html?script=" + encodeURIComponent(script);
+
       var view = document.createElement("a");
       view.className = "script-btn script-btn-view";
-      view.href = href;
+      view.href = viewHref;
       view.target = "_blank";
       view.rel = "noopener noreferrer";
       view.innerHTML = codeIcon + "View";
-      view.setAttribute("aria-label", "View " + script + " in a new tab");
+      view.setAttribute("aria-label", "View " + script + " source code");
 
       var download = document.createElement("a");
       download.className = "script-btn script-btn-download";
