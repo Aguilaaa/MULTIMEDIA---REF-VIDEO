@@ -42,9 +42,28 @@
         A Blender animation with procedural textures, orbital motion, and Python-driven scene setup—full overview below,
         plus per-body stats tied to the age calculator.
       </p>
-      <div class="project-badges">
-        <span class="project-tag">Blender</span>
-        <span class="project-tag">Python Script</span>
+      <div class="project-tools">
+        <p class="project-tools-label">Tools</p>
+        <div class="project-badges">
+          <span class="project-tag">
+            <img
+              class="project-tag-icon project-tag-icon-blender"
+              src="images/icons/blender.png"
+              alt=""
+              width="16"
+              height="16"
+            />
+            Blender
+          </span>
+          <span class="project-tag">
+            <img class="project-tag-icon" src="images/icons/textures.svg" alt="" width="16" height="16" />
+            Textures
+          </span>
+          <span class="project-tag">
+            <img class="project-tag-icon" src="images/icons/python.svg" alt="" width="16" height="16" />
+            Python Script
+          </span>
+        </div>
       </div>
 
       <section class="section-block" aria-labelledby="final-animation-heading">
@@ -75,7 +94,7 @@
           >. Script assets and notes are organized for Sun and each planet.
         </p>
         <ul class="details-list">
-          <li><strong style="color: var(--text)">Render:</strong> ~13.5 hours; 1920×1080 @ 24 fps; 3500 frames (~2 min 25 s).</li>
+          <li><strong style="color: var(--text)">Render:</strong> ~13.5 hours; 1920×1080 @ 30 fps; 1890 frames (1:03).</li>
           <li><strong style="color: var(--text)">Pipeline:</strong> Cycles, GPU-focused settings, camera tour from Sun through planets, zoom-out system view.</li>
           <li>
             <strong style="color: var(--text)">Python scripts:</strong>
@@ -83,6 +102,113 @@
             Blender setup scripts.
           </li>
         </ul>
+      </section>
+
+      <section class="section-block" id="workflow" aria-labelledby="workflow-heading">
+        <h2 id="workflow-heading">Step-by-step workflow</h2>
+        <p class="workflow-intro">
+          This is the pipeline I followed for the solar system project: source the planet textures first, use AI to draft
+          the Blender Python scripts, tweak them for my scene, then run and render each pass before assembling the final
+          animation.
+        </p>
+
+        <ol class="workflow-steps">
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">1</span>
+            <h3>Gather textures first</h3>
+            <p>
+              Download high-resolution maps for the Sun and each planet from
+              <a href="https://www.solarsystemscope.com/textures/" target="_blank" rel="noopener noreferrer"
+                >Solar System Scope</a
+              >. Organize them in one folder so every script can point to the same texture paths (including Saturn’s
+              rings where needed).
+            </p>
+            <p class="workflow-step-tip">
+              <strong>Tip:</strong> Name files clearly (e.g. <kbd>2k_earth.jpg</kbd>, <kbd>2k_mars.jpg</kbd>) before
+              writing or editing any script.
+            </p>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">2</span>
+            <h3>Plan each celestial body</h3>
+            <p>
+              Decide what each script should build: mesh scale, orbital distance, rotation speed, camera framing, and
+              render length. I kept a separate Python file per body (Sun, Mercury, Venus, etc.) plus one script for the
+              full final render.
+            </p>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">3</span>
+            <h3>Generate scripts with AI</h3>
+            <p>
+              Used AI to draft the Blender Python setup for each planet—creating spheres, assigning textures, adding orbit
+              empties, keyframing motion, and placing the camera. That gave me a working base instead of writing
+              everything from scratch.
+            </p>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">4</span>
+            <h3>Modify the scripts</h3>
+            <p>
+              Edited the generated code to match my project: corrected texture file paths, adjusted distances and timing,
+              tuned Cycles/GPU settings, and fixed camera distance so each body reads clearly in the final tour.
+            </p>
+            <p class="workflow-step-tip">
+              <strong>Tip:</strong> Use the <strong style="color: var(--text)">View</strong> buttons on each card below
+              to read the finished scripts on this site.
+            </p>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">5</span>
+            <h3>Run the scripts in Blender</h3>
+            <p>
+              Open Blender 3.3, switch to the <strong style="color: var(--text)">Scripting</strong> workspace, load a
+              <kbd>.py</kbd> file, and click <strong style="color: var(--text)">Run Script</strong>. Repeat for each
+              celestial body to build the scene automatically instead of placing everything by hand.
+            </p>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">6</span>
+            <h3>Preview and adjust in the viewport</h3>
+            <p>
+              After each run, check materials, lighting, and camera framing in the 3D viewport. Small tweaks—exposure,
+              scale, or orbit speed—were easier to fix in the script and re-run than to adjust manually every time.
+            </p>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">7</span>
+            <h3>Render individual planet passes</h3>
+            <p>
+              Exported close-up clips for each body (the embedded YouTube videos on this page). These passes became the
+              per-planet showcase while the main timeline was still being finalized.
+            </p>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">8</span>
+            <h3>Assemble the full animation</h3>
+            <p>
+              Ran <strong style="color: var(--text)">final_render.py</strong> to set up the complete camera tour—from the
+              Sun through each planet and out to the wide system view—using the same textures and motion logic from the
+              individual scripts.
+            </p>
+          </li>
+
+          <li class="workflow-step">
+            <span class="workflow-step-number" aria-hidden="true">9</span>
+            <h3>Render and export the final video</h3>
+            <p>
+              Sent the full composition through the Render Queue with Cycles and GPU rendering (1920×1080 @ 30 fps,
+              1890 frames). The exported MP4 is the final 1:03 solar system animation shown at the top of this page.
+            </p>
+          </li>
+        </ol>
       </section>
 
       <section class="section-block" id="age-calculator" aria-labelledby="calc-heading">
@@ -533,9 +659,12 @@
     </main>
 
     <footer class="site-footer">
-      <span>Multimedia portfolio</span>
-      <span class="sep" aria-hidden="true">·</span>
-      <a href="index.html">Home</a>
+      <p class="site-footer-credits">Jerome Alexis Aguila · BSIT-S-2A</p>
+      <p class="site-footer-meta">
+        <span>Multimedia portfolio</span>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="index.html">Home</a>
+      </p>
     </footer>
 
     <script src="script.js"></script>

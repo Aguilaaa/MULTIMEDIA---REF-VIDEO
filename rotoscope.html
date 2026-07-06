@@ -39,12 +39,26 @@
       <h1 class="project-page-title">1-minute video rotoscope</h1>
       <p class="project-lede">
         Frame-by-frame tracing with an auto-brush workflow in Adobe After Effects—isolate layers, stylize fills, then
-        assemble in Premiere Pro and CapCut.
+        assemble in CapCut.
       </p>
-      <div class="project-badges">
-        <span class="project-tag">Adobe After Effects</span>
-        <span class="project-tag">Adobe Premiere Pro</span>
-        <span class="project-tag">CapCut</span>
+      <div class="project-tools">
+        <p class="project-tools-label">Tools</p>
+        <div class="project-badges">
+          <span class="project-tag">
+            <img class="project-tag-icon" src="images/icons/after-effects.svg" alt="" width="16" height="16" />
+            Adobe After Effects
+          </span>
+          <span class="project-tag">
+            <img
+              class="project-tag-icon project-tag-icon-capcut"
+              src="images/icons/capcut.png"
+              alt=""
+              width="16"
+              height="16"
+            />
+            CapCut
+          </span>
+        </div>
       </div>
 
       <section class="section-block" aria-labelledby="ref-heading">
@@ -55,12 +69,29 @@
         <div class="video-frame">
           <iframe
             src="https://www.youtube.com/embed/KNzw53-oxQc"
-            title="Reference video for rotoscope project"
+            title="Reference video for rotoscope project — LE SSERAFIM Perfect Night dance cover"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
         </div>
+        <aside class="reference-credit" aria-labelledby="reference-credit-heading">
+          <h3 id="reference-credit-heading">Reference footage credit</h3>
+          <p>
+            The source video used for this rotoscope project belongs to its original creator. This portfolio piece is an
+            academic exercise and does not claim ownership of the reference footage.
+          </p>
+          <dl class="reference-credit-list">
+            <div>
+              <dt>Original video</dt>
+              <dd>
+                <a href="https://youtu.be/KNzw53-oxQc" target="_blank" rel="noopener noreferrer"
+                  >LE SSERAFIM – Perfect Night (Dance Cover – Chaerin, 1080p)</a
+                >
+              </dd>
+            </div>
+          </dl>
+        </aside>
       </section>
 
       <section class="section-block" aria-labelledby="weekly-heading">
@@ -257,7 +288,7 @@
             <span class="workflow-step-number" aria-hidden="true">1</span>
             <h3>Split the video into 5-second clips</h3>
             <p>
-              In <strong style="color: var(--text)">CapCut</strong> (or Premiere Pro), trim your reference footage into
+              In <strong style="color: var(--text)">CapCut</strong>, trim your reference footage into
               roughly <strong style="color: var(--text)">5-second segments</strong>. Shorter chunks are easier to
               rotoscope, preview, and re-render if something goes wrong—and they keep After Effects from slowing down on
               long compositions.
@@ -371,9 +402,12 @@
     </main>
 
     <footer class="site-footer">
-      <span>Multimedia portfolio</span>
-      <span class="sep" aria-hidden="true">·</span>
-      <a href="index.html">Home</a>
+      <p class="site-footer-credits">Jerome Alexis Aguila · BSIT-S-2A</p>
+      <p class="site-footer-meta">
+        <span>Multimedia portfolio</span>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="index.html">Home</a>
+      </p>
     </footer>
 
     <script src="script.js"></script>
